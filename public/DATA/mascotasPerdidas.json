@@ -1,0 +1,126 @@
+[{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 1,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32115918,
+                    -36.8920748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.32115918,
+                "y": -36.8920748,
+                "nombre": "Ruffo",
+                "datos": "Perro color marron, con collar rojo",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32115918,
+                    -36.8970748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.32115918,
+                "y": -36.8970748,
+                "nombre": "Ciro",
+                "datos": "Perro color marron, con collar verde",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.325918,
+                    -36.892748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.325918,
+                "y": -36.892748,
+                "nombre": "Thor",
+                "datos": "Perro color negro, con collar rojo",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3211875918,
+                    -36.8926770748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.3211875918,
+                "y": -36.8926770748,
+                "nombre": "Pepe",
+                "datos": "Tiene un collar verde",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.321615918,
+                    -36.892740748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.321615918,
+                "y": -36.892740748,
+                "nombre": "Gato",
+                "datos": "Camina rengo",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": 6,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.321135918,
+                    -36.892740748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.321135918,
+                "y": -36.892740748,
+                "nombre": "Firu",
+                "datos": "Es un perro viejo, de tamaño grande, color marron",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        }
+]}]
+

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Olavarria</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/styleMascotas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <nav id="mainNavbar" class="navbar-estilosa">
+        <div class="navbar-container">
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="navbar-links" id="navbarLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../HTML/eventos.html">Eventos</a></li>
+                <li><a href="#" class="activo">Mascotas perdidas</a></li>
+                <li><a href="../HTML/ayuda.html">Ayuda</a></li>
+                <li><a href="#" onclick=" borrar(); abrirPopup();" class="vistaEdicion" id="botonLogin">Iniciar
+                        sesión</a></li>
+                <li><a href="../HTML/login.html">Registrarse</a></li>
+            </ul>
+            <a href="../index.html" class="navbar-logo">
+                <img src="../IMG/LogoPO.png" alt="Logo Portal Olavarría" height="48">
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- Título de la sección -->
+    <div class="mapa-titulo">
+        <img src="../IMG/Portal Olavarria - FallTech(7).png" alt="Mascota">
+    </div>
+
+ <!-- popup publicacion -->
+    <div id="popupPublicacion" class="popup-overlay">
+        <div class="popup-content contpopup">
+            <span class="cerrar" onclick="cerrarPublicacion()">&times;</span>
+            <h2>Publicación</h2>
+            <form>
+                 <div id="mapaForm" style="height: 200px;"></div>
+                        <div class="mb-3">
+                            <label for="InputNameMascotas" class="form-label">Nombre de la Mascota</label>
+                            <input type="text" class="form-control" id="InputNameMascotas" placeholder="Nombre de la mascota" required>
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="InputDatos" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="InputDatos" placeholder="Descripción">
+                        </div> -->
+                        <div class="mb-3" >
+                                 <input type="text" id="direccionMascotas" placeholder="Dirección completa, con ciudad" required>
+                            <button type="button" onclick="borrarMarcadorForm();buscarDireccion();">Buscar dirección</button>
+                        </div>
+                        <div class="mb-3">
+                            <input type="hidden" id="latitudEventoMascotas">
+                            <input type="hidden" id="longitudEventoMascotas">
+                            <label class="form-label">Contacto</label>
+                            <input type="text" class="form-control" id="InputContactoMascotas" placeholder="Contacto">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="InpudDatosMascotas">Descripción</label>
+                            <textarea class="form-control" id="InputDatosMascotas" rows="3" placeholder="Descripción"></textarea >
+                        </div>
+                        <span type="submit" class="fakebutton btn-primary" id="btnAddMascotas" onclick="AddData(); cerrarPublicacion();">Enviar
+                            Datos</span>
+                        <span type="submit" class="btn btn-primary" id="btnUpdateMascotas" onclick="cerrarPublicacion()" >Actualizar
+                            Datos</span>
+                    </form>
+        </div>
+    </div>
+    
+
+
+<!-- fin Agregar publicacion -->
+
+
+    <div class="contMapa">
+        <div class="eventos-lateral">
+            <ul>
+                <li><a href="#">Mascotas perdidas</a></li>
+                <li><a href="#">Salud</a></li>
+                <li><a href="#">Transporte</a></li>
+                <li><a href="#" onclick=" publicar();" class="btnPublicacion">Hace tu publicacion!</a></li>
+            </ul>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <!-- Título de la sección -->
+    <div class="mapa-eventos">MASCOTAS PERDIDAS</div>
+
+    <div id="popupLogin" class="popup-overlay">
+        <div class="popup-content">
+            <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="usuario">Usuario o Email</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="clave" required>
+
+                <span class="fakebutton" onclick="cerrarPopup()">Entrar</span>
+            </form>
+        </div>
+    </div>
+
+<!-- Agregar publicacion -->
+    <!-- <div class="container-body"> -->
+        <!-- <div id="map"></div> -->
+        <!-- <div class="container text-center">
+            <h1>Crud(Vista Administrador)</h1>
+        </div>
+        <div class="container">
+            <div class="card-container"></div>
+            <hr>
+            <table class="table table-bordered" id="tableData">
+                <thead>
+                    <tr>
+                        <th>Nombre del evento</th>
+                        <th>Contacto</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+               </table>
+        </div>
+    </div> -->
+
+
+    <div class="container" id="containerCards">
+        <!-- <div class="card" id="borrarCard1">
+            <button id=vistaEdicion1 onclick="document.getElementById('borrarCard1').classList.add('borrar')"
+                class=" borrar botonEliminar"> Eliminar</button> -->
+            <!-- <button onclick= "document.getElementById('editarCard').classList.add('editar')" class="botonEditar"> Editar</button> -->
+            <!-- <img src="../IMG/images.jpg" alt="Perro Perdido">
+            <div class="card-body ">
+                <h6>RUFFO</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>El próximo 4 de junio desde las 7:00 AM, se perdio Ruffo por la zona del Hospital municipal.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard2">
+            <button onclick="document.getElementById('borrarCard2').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="../IMG/perroperdido.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>CIRO</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>El próximo 4 de junio desde las 7:00 AM, se perdio Ciro por la zona del Hospital municipal.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard3">
+            <button onclick="document.getElementById('borrarCard3').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="../IMG/perroPerdido2.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>THOR</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>El próximo 4 de junio desde las 7:00 AM, se perdio Thor por la zona del Hospital municipal.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard4">
+            <button id=vistaEdicion4 onclick="document.getElementById('borrarCard4').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="../IMG/perroPerdido2.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>THOR</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>El próximo 4 de junio desde las 7:00 AM, se perdio Thor por la zona del Hospital municipal.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard5">
+            <button onclick="document.getElementById('borrarCard5').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="../IMG/images.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>RUFFO</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>El próximo 4 de junio desde las 7:00 AM, se perdio Ruffo por la zona del Hospital municipal.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard6">
+            <button onclick="document.getElementById('borrarCard6').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="../IMG/perroPerdido2.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>THOR</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>El próximo 4 de junio desde las 7:00 AM, se perdio Thor por la zona del Hospital municipal.</p>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div class="banner">
+        <img src="../IMG/Portal Olavarria - FallTech(1).png" alt="Mascota">
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Eventos</h4>
+                <ul>
+                    <li><a href="#">Mascotas perdidas</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Transporte</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">...</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Sobre nosotros</h4>
+                <ul>
+                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Reclamos</a></li>
+                    <li><a href="#">Informacion</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                    <li><a href="#">Politica privada</a></li>
+                    <li><a href="#">Terminos legales</a></li>
+                    <li><a href="#">Licencia de autor</a></li>
+                </ul>
+            </div>
+            <div class="footer-column subscribe">
+                <h4>Contactanos</h4>
+                <p>Contactanos para recibir mas informacion</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Ingrese su e-mail" />
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 FALLTECH.</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios/20/000000/facebook-new.png" alt="Facebook" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios/20/000000/X-new.png" alt="X" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios/20/000000/instagram-new.png" alt="Instagram" /></a>
+            </div>
+        </div>
+    </footer>
+    <script src="../JS/mascotas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

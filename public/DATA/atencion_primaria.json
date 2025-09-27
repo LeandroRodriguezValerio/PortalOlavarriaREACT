@@ -1,0 +1,565 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.16",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.31184067,
+                        -36.8853366
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 8",
+                "nombre": "HOSPITAL MUNICIPAL \"HECTOR CURA\"",
+                "direccion": "RIVADAVIA 4057",
+                "telefono": "440800",
+                "latitud": -36.885337,
+                "longitud": -60.311841
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.24",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.17873006,
+                        -36.88096106
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CENTRO MUNICIPAL DE SALUD NRO 19 COLONIA HINOJO",
+                "direccion": "DE LOS FUNDADORES 1206",
+                "telefono": "491515",
+                "latitud": -36.880961,
+                "longitud": -60.17873
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.14",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.31813033,
+                        -36.9279371
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 7",
+                "nombre": "CAPS N°27 CIC",
+                "direccion": "CALLE 113 BIS 601",
+                "telefono": "452474",
+                "latitud": -36.927937,
+                "longitud": -60.31813
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.4",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.3415511,
+                        -36.89462258
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 2",
+                "nombre": "CAPS N°7 Independencia",
+                "direccion": "AYACUCHO Y PUEYRREDON",
+                "telefono": "420794",
+                "latitud": -36.894623,
+                "longitud": -60.341551
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.8",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.25437389,
+                        -36.95034164
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 5",
+                "nombre": "CAPS N°20 AOMA",
+                "direccion": "GENERAL PAZ 11422",
+                "telefono": "450130",
+                "latitud": -36.950342,
+                "longitud": -60.254374
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.7",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.29959276,
+                        -36.89348594
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 4",
+                "nombre": "CAPS N°5 Hipólito Irigoyen",
+                "direccion": "FAL 4124",
+                "telefono": "420646",
+                "latitud": -36.893486,
+                "longitud": -60.299593
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.9",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.31478448,
+                        -36.90766881
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 6",
+                "nombre": "CAPS N°11 Obrero",
+                "direccion": "DEL VALLE 4291",
+                "telefono": "425473",
+                "latitud": -36.907669,
+                "longitud": -60.314784
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.10",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.29397113,
+                        -36.91323929
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 6",
+                "nombre": "CAPS N°16 Villa Magdalena",
+                "direccion": "CORDOBA 3082",
+                "telefono": "429119",
+                "latitud": -36.913239,
+                "longitud": -60.293971
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.12",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.32772466,
+                        -36.91232211
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 7",
+                "nombre": "CAPS N°8 10 De Junio",
+                "direccion": "GIOVANELLI 3867",
+                "telefono": "424415",
+                "latitud": -36.912322,
+                "longitud": -60.327725
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.15",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.33324886,
+                        -36.90756596
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 8",
+                "nombre": "CAPS N°17 Damaso Arce",
+                "direccion": "25 DE MAYO 1135",
+                "telefono": "430023",
+                "latitud": -36.907566,
+                "longitud": -60.333249
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.17",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.297846,
+                        -36.90454931
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 4",
+                "nombre": "CAPS N°25 ACUPO",
+                "direccion": "CALLE 101 BIS 3502",
+                "telefono": "421351",
+                "latitud": -36.904549,
+                "longitud": -60.297846
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.18",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.30908614,
+                        -36.89782473
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 6",
+                "nombre": "CAPS N°3 Amorosa",
+                "direccion": "DEAN FUNES 3303",
+                "telefono": "421067",
+                "latitud": -36.897825,
+                "longitud": -60.309086
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.1",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.32780247,
+                        -36.87990466
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 1",
+                "nombre": "CAPS N°2 Sarmiento",
+                "direccion": "ROQUE SAENZ PEÑA 1450",
+                "telefono": "455696",
+                "latitud": -36.879905,
+                "longitud": -60.327802
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.2",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.32427665,
+                        -36.8704749
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 1",
+                "nombre": "CAPS N°26 Lourdes",
+                "direccion": "GRIMALDI 894",
+                "telefono": "455200",
+                "latitud": -36.870475,
+                "longitud": -60.324277
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.3",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.33318167,
+                        -36.87416997
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 1",
+                "nombre": "CAPS N°6 12 de Octubre",
+                "direccion": "HIPOLITO IRIGOYEN Y 13",
+                "telefono": "456553",
+                "latitud": -36.87417,
+                "longitud": -60.333182
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.5",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.33914837,
+                        -36.88293319
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 2",
+                "nombre": "CAPS N°18 Alberdi",
+                "direccion": "ALBERDI Y CNEL SUAREZ",
+                "telefono": "456306",
+                "latitud": -36.882933,
+                "longitud": -60.339148
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.6",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.2916277,
+                        -36.8776484
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 3",
+                "nombre": "CAPS N°23 Belén",
+                "direccion": "EMILIOZZI 5936",
+                "telefono": "422535",
+                "latitud": -36.877648,
+                "longitud": -60.291628
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.11",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.30391565,
+                        -36.9198807
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 6",
+                "nombre": "CAPS N°22 Villa Maylin",
+                "direccion": "MENDOZA Y BALCARCE",
+                "telefono": "451601",
+                "latitud": -36.919881,
+                "longitud": -60.303916
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.13",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.31926838,
+                        -36.92097739
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": "SERVICIO TERRITORIAL 7",
+                "nombre": "CAPS N°12 CECO",
+                "direccion": "BARRIO CECO CASA 500",
+                "telefono": "451945",
+                "latitud": -36.920977,
+                "longitud": -60.319268
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.25",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.23487223,
+                        -36.8458707
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CAPS N°4 Sierra Chica",
+                "direccion": "SBARDOLINI E/MARELLI",
+                "telefono": "422229",
+                "latitud": -36.845871,
+                "longitud": -60.234872
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.20",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.11145691,
+                        -36.94885477
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CENTRO MUNICIPAL DE SALUD NRO 09 COLONIA SAN MIGUEL",
+                "direccion": "SAN MARTIN E/25 DE MAYO",
+                "telefono": "15201422",
+                "latitud": -36.948855,
+                "longitud": -60.111457
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.19",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.27865568,
+                        -36.98330524
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CENTRO MUNICIPAL DE SALUD NRO 21 LOMA NEGRA",
+                "direccion": "1 DE MAYO 1458",
+                "telefono": "493291",
+                "latitud": -36.983305,
+                "longitud": -60.278656
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.21",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.8851516,
+                        -36.53441087
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CENTRO MUNICIPAL DE SALUD NRO 13 BLANCA GRANDE",
+                "direccion": "CALLE 5 E/CALLE 6",
+                "telefono": "02314426170",
+                "latitud": -36.534411,
+                "longitud": -60.885152
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.22",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -61.08625475,
+                        -36.65174313
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CENTRO MUNICIPAL DE SALUD NRO 14 RECALDE",
+                "direccion": "ZANARDI Y CALLE 12",
+                "telefono": "02314499120",
+                "latitud": -36.651743,
+                "longitud": -61.086255
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "atencion_primaria.23",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -60.41688929,
+                        -37.12687441
+                    ]
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "st": null,
+                "nombre": "CENTRO MUNICIPAL DE SALUD NRO 15 SANTA LUISA",
+                "direccion": "C/45 PLANTA URBANA",
+                "telefono": "495522",
+                "latitud": -37.126874,
+                "longitud": -60.416889
+            }
+        }
+    ],
+    "totalFeatures": 25,
+    "numberMatched": 25,
+    "numberReturned": 25,
+    "timeStamp": "2025-06-20T23:40:15.310Z",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::4326"
+        }
+    }
+}

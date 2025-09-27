@@ -1,0 +1,124 @@
+/* === NAVBAR ESTILOSA === */
+.navbar-estilosa {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #206491, #284177);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
+
+
+.navbar-estilosa .navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  /* Espacio entre hamburguesa y logo */
+}
+
+.navbar-estilosa .navbar-links {
+  margin-left: auto;
+  /* Empuja los links a la derecha */
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0 0 0 auto;
+  /* Asegura el empuje a la derecha */
+  padding: 0;
+}
+
+.navbar-estilosa .navbar-logo img {
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-estilosa .navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-estilosa .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: inherit !important;
+  padding: 0;
+}
+
+.navbar-estilosa .navbar-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.navbar-estilosa .navbar-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s;
+}
+
+.navbar-estilosa .navbar-links li a:hover::after {
+  width: 100%;
+}
+
+.navbar-estilosa .navbar-links li a:hover {
+  color: #f0f0f0;
+}
+
+.navbar-toggle {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  z-index: 1100;
+}
+
+.navbar-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .navbar-estilosa .navbar-links {
+    display: none;
+    flex-direction: column;
+    background: #284177;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 180px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-radius: 0 0 0 10px;
+  }
+
+  .navbar-estilosa .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}

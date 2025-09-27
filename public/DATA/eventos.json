@@ -1,0 +1,126 @@
+[{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 1,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32115918,
+                    -36.8920748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.32115918,
+                "y": -36.8920748,
+                "nombre": "Teatro Municipal",
+                "datos": "Evento cultural, teatro en Olavarria",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3315918,
+                    -36.8970748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.3315918,
+                "y": -36.8970748,
+                "nombre": "evento de mascotas",
+                "datos": "Evento de adopción de mascotas, se realizará en la plaza central",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.325918,
+                    -36.83748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.325918,
+                "y": -36.83748,
+                "nombre": "Azado de fin de año",
+                "datos": "Evento de fin de año, asado comunitario en el parque",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3211875918,
+                    -36.8926770748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.3211875918,
+                "y": -36.8926770748,
+                "nombre": "reunion de seguridad vecinal",
+                "datos": "Reunión de seguridad vecinal, se realizará en el centro comunitario",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3281615918,
+                    -36.895452748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.3281615918,
+                "y": -36.895452748,
+                "nombre": "cumpleaños de Firu",
+                "datos": "el cumpleaños de Firu, un perro muy querido en la comunidad",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": 6,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.321135918,
+                    -36.835740748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.321135918,
+                "y": -36.835740748,
+                "nombre": "Recital de rock",
+                "datos": "Recital de rock en el parque, con bandas locales",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        }
+]}]
+

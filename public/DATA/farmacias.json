@@ -1,0 +1,775 @@
+[{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "farmacias.1",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32115918,
+                    -36.89270748
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.32116,
+                "y": -36.892708,
+                "nombre": "ALEM",
+                "direccion": "RIVADAVIA 2957",
+                "telefono": "TEL: +54 02284- 425245"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.2",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32068149,
+                    -36.89383674
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.320682,
+                "y": -36.893838,
+                "nombre": "ALAVAREZ",
+                "direccion": "BELGRANO Y MORENO",
+                "telefono": "TEL: +54  02284- 420560/422488"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.3",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.33079476,
+                    -36.90049947
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.330796,
+                "y": -36.9005,
+                "nombre": "DISANTI",
+                "direccion": "RIVADAVIA Y BUCHARDO",
+                "telefono": "TEL: +54 02284-427868"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.4",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3027536,
+                    -36.89462149
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.302755,
+                "y": -36.894622,
+                "nombre": "BALDINI",
+                "direccion": "URQUIZA 3920",
+                "telefono": "TEL: +54  02284-427910 / 428438"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.5",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3256268,
+                    -36.89247534
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.325628,
+                "y": -36.892476,
+                "nombre": "BUENO",
+                "direccion": "LAVALLE Y GRAL PAZ",
+                "telefono": "TEL: +54 02284- 414651"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.6",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32398387,
+                    -36.89380606
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.323985,
+                "y": -36.893807,
+                "nombre": "CENTRAL",
+                "direccion": "VTE LOPEZ Y GRAL PAZ",
+                "telefono": "TEL: +54  02284- 420674"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.7",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32342484,
+                    -36.88508298
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.323426,
+                "y": -36.885084,
+                "nombre": "CORREA",
+                "direccion": "AVDA COLON 2084",
+                "telefono": "TEL: +54  02284-424405"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.8",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32103661,
+                    -36.8788122
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.321038,
+                "y": -36.878813,
+                "nombre": "DELLA MAGIORA",
+                "direccion": "AVDA. SARMIENTO 1746",
+                "telefono": "TEL: +54  02284-415111"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.9",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.33393154,
+                    -36.89236036
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.333932,
+                "y": -36.89236,
+                "nombre": "FAILLA",
+                "direccion": "AVDA DEL VALLE Y CHACABUCO",
+                "telefono": "TEL: +54  02284-426716 / 444744"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.10",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32779492,
+                    -36.89662494
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.327796,
+                "y": -36.896626,
+                "nombre": "FENIX",
+                "direccion": "VTE LOPEZ 2257",
+                "telefono": "TEL: +54  02284- 430013"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.11",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.30260482,
+                    -36.88527167
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.302606,
+                "y": -36.885273,
+                "nombre": "FERRERO",
+                "direccion": "AVDA.TRABAJADORES 3335",
+                "telefono": "TEL: +54  02284-425355"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.12",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32579536,
+                    -36.88259525
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.325796,
+                "y": -36.882596,
+                "nombre": "GOMEZ",
+                "direccion": "AVDA.COLON 1745",
+                "telefono": "TEL: +54  02284-411295"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.13",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.30728524,
+                    -36.89798017
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.307286,
+                "y": -36.897981,
+                "nombre": "GONZALEZ",
+                "direccion": "AVDA. COLON Y AVDA.URQUIZA",
+                "telefono": "TEL: +54  02284-424180"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.14",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32065418,
+                    -36.90049446
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.320655,
+                "y": -36.900495,
+                "nombre": "LA ESENCIA",
+                "direccion": "AVDA.PRINGLES Y BOLIVAR",
+                "telefono": "TEL: +54  02284-418484"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.15",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.30363676,
+                    -36.88728545
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.303638,
+                "y": -36.887286,
+                "nombre": "LAVIN",
+                "direccion": "AVDA.PRINGLES 4402",
+                "telefono": "TEL: +54  02284-422170"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.16",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.31119757,
+                    -36.88647587
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.311198,
+                "y": -36.886476,
+                "nombre": "MAGISTRAL",
+                "direccion": "AVDA. SARMIENTO Y MORENO",
+                "telefono": "TEL: +54  02284-431313"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.17",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3207197,
+                    -36.89647764
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.320721,
+                "y": -36.896479,
+                "nombre": "MARTEL",
+                "direccion": "ESPANA Y GRAL. PAZ.",
+                "telefono": "TEL: +54  02284- 423530/445550"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.18",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3144538,
+                    -36.89243627
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.314455,
+                "y": -36.892437,
+                "nombre": "MARTINEZ",
+                "direccion": "AVDA.COLON 3172",
+                "telefono": "TEL: +54  02284-445641"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.19",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.31847732,
+                    -36.89315014
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.318478,
+                "y": -36.893151,
+                "nombre": "MELFFI",
+                "direccion": "NECOCHEA 2986",
+                "telefono": "TEL: +54 02284-410011"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.20",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.3130319,
+                    -36.88518008
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.313033,
+                "y": -36.885181,
+                "nombre": "MENESCALDI",
+                "direccion": "V.LOPEZ Y AVDA. SARMIENTO",
+                "telefono": "TEL: +54  02284-424886"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.21",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32409264,
+                    -36.92008227
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.324094,
+                "y": -36.920083,
+                "nombre": "MOGUES",
+                "direccion": "BARRIO CECO 1 CASA 262",
+                "telefono": "TEL: +54  02284-451111"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.22",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32028674,
+                    -36.89168329
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.320288,
+                "y": -36.891684,
+                "nombre": "OLAVARRIA",
+                "direccion": "NECOCHEA 2762.",
+                "telefono": "TEL: +54  02284-444477"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.23",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.30399682,
+                    -36.90358525
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.303998,
+                "y": -36.903586,
+                "nombre": "PACHECO",
+                "direccion": "AVDA. PELLEGRINI 3194",
+                "telefono": "TEL: +54 02284-427294"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.24",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.17822592,
+                    -36.87770257
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.178227,
+                "y": -36.877704,
+                "nombre": "PEREIRA",
+                "direccion": "AVELLANEDA Y SANTA MARIA, HINOJO",
+                "telefono": "TEL:+54 02284-491110"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.25",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32398234,
+                    -36.9028641
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.323983,
+                "y": -36.902865,
+                "nombre": "PICCOLI",
+                "direccion": "AVDA.PRINGLES 2035",
+                "telefono": "TEL: +54  02284-416574"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.26",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32963926,
+                    -36.90440033
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.32964,
+                "y": -36.904401,
+                "nombre": "SAN JOSE",
+                "direccion": "PUEYRREDON 3166",
+                "telefono": "TEL: +54  02284-426648"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.27",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32863245,
+                    -36.88717207
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.328633,
+                "y": -36.887173,
+                "nombre": "SPINA",
+                "direccion": "BELGRANO 1921",
+                "telefono": "TEL: +54 02284-419255"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.28",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.31605582,
+                    -36.8951382
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.316057,
+                "y": -36.895139,
+                "nombre": "SPINOLA",
+                "direccion": "NECOCHEA 3282.",
+                "telefono": "TEL: +54  02284- 422263/441419"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.29",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.31799335,
+                    -36.90519141
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.317994,
+                "y": -36.905192,
+                "nombre": "STRIEBECK",
+                "direccion": "AVDA. DEL VALLE 3901",
+                "telefono": "TEL: +54  02284-442515"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.30",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.16269158,
+                    -36.86510707
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.162692,
+                "y": -36.865107,
+                "nombre": "QUEVEDO",
+                "direccion": "SAN MARTIN S/N, HINOJO",
+                "telefono": "TEL: +54 02284-491116"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.31",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.31902073,
+                    -36.88814081
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.319022,
+                "y": -36.888142,
+                "nombre": "ZAPARARTE",
+                "direccion": "AV. COLON 2569",
+                "telefono": "TEL: +54  02284- 424476 / 421445"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.32",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32452485,
+                    -36.89488933
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.324526,
+                "y": -36.89489,
+                "nombre": "CECO",
+                "direccion": "CNEL. SUAREZ 2752",
+                "telefono": "TEL: +54  02284-422013"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.33",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.32879389,
+                    -36.89104227
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.328795,
+                "y": -36.891043,
+                "nombre": "SOECO",
+                "direccion": "CNEL. SUAREZ 2201",
+                "telefono": "TEL:+54 02284-424455"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.34",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.16214501,
+                    -36.93316531
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.162146,
+                "y": -36.933166,
+                "nombre": "DARI",
+                "direccion": "SMIRNOFF 2130, SIERRAS BAYAS",
+                "telefono": "TEL:+54 02284-490102/ 461109"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.35",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.22562021,
+                    -36.84265618
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.225621,
+                "y": -36.842657,
+                "nombre": "GOMEZ",
+                "direccion": "AVDA. CENTENARIO Y B. MITRE, SIERRA CHICA",
+                "telefono": "TEL:+54 02284-423560"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.36",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.27808518,
+                    -36.98069441
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.278085,
+                "y": -36.980694,
+                "nombre": "A.M.M.B.A",
+                "direccion": "G. BRAEN, CALLE 13 , LOMA NEGRA",
+                "telefono": "TEL:+54 02284-495258"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.37",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.23132963,
+                    -36.84591366
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.231331,
+                "y": -36.845915,
+                "nombre": "OLIVERA",
+                "direccion": "LEGORBURU 1214, SIERRA CHICA",
+                "telefono": "TEL:+54 02284-440077"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "farmacias.38",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -60.15690185,
+                    -36.93463054
+                ]
+            },
+            "geometry_name": "geom",
+            "properties": {
+                "status": "M",
+                "x": -60.156902,
+                "y": -36.934631,
+                "nombre": "A.M.M.B.A",
+                "direccion": "JULIO A. ROCA 2338, SIERRAS BAYAS",
+                "telefono": "TEL:+54 02284-492730"
+            }
+        }
+    ],
+    "totalFeatures": 38,
+    "numberMatched": 38,
+    "numberReturned": 38,
+    "timeStamp": "2025-06-25T21:34:09.169Z",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::4326"
+        }
+    }
+}]

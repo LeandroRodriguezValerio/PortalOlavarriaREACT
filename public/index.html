@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Olavarria</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <nav id="mainNavbar" class="navbar-estilosa">
+        <div class="navbar-container">
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="navbar-links" id="navbarLinks">
+                <li><a href="../index.html" class="activo">Inicio</a></li>
+                <li><a href="./HTML/eventos.html">Eventos</a></li>
+                <li><a href="./HTML/mascotas.html">Mascotas perdidas</a></li>
+                <li><a href="./HTML/ayuda.html">Ayuda</a></li>
+                <li><a href="#" onclick=" borrar(); abrirPopup();" class="vistaEdicion" id="botonLogin">Iniciar
+                        sesión</a></li>
+                <li><a href="./HTML/login.html">Registrarse</a></li>
+            </ul>
+            <a href="./index.html" class="navbar-logo">
+                <img src="./IMG/LogoPO.png" alt="Logo Portal Olavarría" height="48">
+            </a>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">1 / 4</div> -->
+            <a href="./HTML/eventos.html"><img src="./IMG/Portal Olavarria - FallTech(8).png" style="width:100%"></a>
+            <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">2 / 4</div> -->
+            <a href="./HTML/mascotas.html"><img src="./IMG/Portal Olavarria - FallTech(7).png" style="width:100%"></a>
+            <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">3 / 4</div> -->
+            <img src="./IMG/Portal Olavarria - FallTech(6).png" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+         <div class="mySlides fade">
+            <!-- <div class="numbertext">4 / 4</div> -->
+            <img src="./IMG/Portal Olavarria - eventos.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+    </div>
+    <div id="popupLogin" class="popup-overlay">
+        <div class="popup-content">
+            <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="usuario">Usuario o Email</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="clave" required>
+
+                <span class="fakebutton" onclick="cerrarPopup()">Entrar</span>
+            </form>
+        </div>
+    </div>
+    <!-- popup publicacion -->
+    <div id="popupPublicacion" class="popup-overlay">
+        <div class="popup-content">
+            <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+            <h2>Publicación</h2>
+            <form>
+                <label for="tipoPublicacion">Tipo de Publicación</label>
+                <select id="tipoPublicacion" name="tipoPublicacion" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="mascota">Mascota perdida</option>
+                    <option value="evento">Evento</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label for="titPubl">Titulo de la publicacion</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+                <label for="datos">Datos de contacto</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <span class="fakebutton" onclick="cerrarPublicacion()">PUBLICAR</span>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="contMapa">
+        <div class="eventos-lateral">
+            <ul>
+                <li><a href="#">Museos</a></li>
+                <li><a href="#">Salud</a></li>
+                <li><a href="#">Farmacias</a></li>
+                <li><a href="#">Transporte</a></li>
+                <li><a href="#" onclick=" publicar();" class="btnPublicacion">Hace tu publicacion!</a></li>
+            </ul>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <div class="container">
+        <div class="card" id="borrarCard1">
+            <button id=vistaEdicion1 onclick="document.getElementById('borrarCard1').classList.add('borrar')"
+                class=" borrar botonEliminar"> Eliminar</button>
+            <!-- <button onclick= "document.getElementById('editarCard').classList.add('editar')" class="botonEditar"> Editar</button> -->
+            <img src="./IMG/perroperdido.jpg" alt="Perro Perdido">
+            <div class="card-body ">
+                <h6>Oscar</h6>
+                <h5>ZONA: Parque Mitre</h5>
+                <p>Se perdio Oscar por Colon y Brown.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard2">
+            <button onclick="document.getElementById('borrarCard2').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="./IMG/evento2.png" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>Corte electrico</h6>
+                <h5>ZONA CENTRO</h5>
+                <p>El próximo 4 de agosto desde las 7:00 AM,a las 8:00 AM, corte programado por reparaciones.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard3">
+            <button onclick="document.getElementById('borrarCard3').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="./IMG/evento3.png" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>Corte de Avenida</h6>
+                <h5>ZONA: Terminal</h5>
+                <p>Se estan realizado tareas en Avenida Pringles, Circular con precaucion. Tiempo de finalizacion indeterminado</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard4">
+            <button id=vistaEdicion4 onclick="document.getElementById('borrarCard4').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="./IMG/perroPerdido2.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>THOR</h6>
+                <h5>ZONA: Parque Norte</h5>
+                <p>Se perdio Thor por la zona del Parque Norte. Es un Golden Retriever, marron.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard5">
+            <button onclick="document.getElementById('borrarCard5').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+            <img src="./IMG/images.jpg" alt="Perro Perdido">
+            <div class="card-body">
+                <h6>RUFFO</h6>
+                <h5>ZONA: Hospital Municipal - Sarmiento y Alsina</h5>
+                <p>Se perdio Ruffo por la zona del Hospital municipal.</p>
+            </div>
+        </div>
+
+        <div class="card" id="borrarCard6">
+            <button onclick="document.getElementById('borrarCard6').classList.add('borrar')"
+                class="borrar botonEliminar"> Eliminar</button>
+           <img src="./IMG/evento7.png" alt="Kreppel">
+            <div class="card-body ">
+                <h6>Inundacion</h6>
+                <h5>ZONA: Camino Rural</h5>
+                <p>Se esta reparando camino rural, despues de fuertes lluvias. Circular con precaucion.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="banner">
+        <img src="./IMG/Portal Olavarria - FallTech(1).png" alt="Mascota">
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Eventos</h4>
+                <ul>
+                    <li><a href="#">Mascotas perdidas</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Transporte</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">...</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Sobre nosotros</h4>
+                <ul>
+                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Reclamos</a></li>
+                    <li><a href="#">Informacion</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                    <li><a href="#">Politica privada</a></li>
+                    <li><a href="#">Terminos legales</a></li>
+                    <li><a href="#">Licencia de autor</a></li>
+                </ul>
+            </div>
+            <div class="footer-column subscribe">
+                <h4>Contactanos</h4>
+                <p>Contactanos para recibir mas informacion</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Ingrese su e-mail" />
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 FALLTECH.</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios/20/000000/facebook-new.png" alt="Facebook" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios/20/000000/X-new.png" alt="X" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios/20/000000/instagram-new.png" alt="Instagram" /></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
