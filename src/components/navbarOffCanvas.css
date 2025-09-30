@@ -1,0 +1,4 @@
+.mi-navbar-personalizado {
+    background-image: linear-gradient(to right, #206491, #284177); /* Degradado de naranja a melocotón */
+    color: white; /* Asegúrate de que el texto sea visible */
+}
