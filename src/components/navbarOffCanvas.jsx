@@ -46,16 +46,16 @@ function OffcanvasExample() {
                   <Nav.Link href="#action1">Iniciar sesión</Nav.Link>
                   <Nav.Link href="#action2">Registrarse</Nav.Link>
                   <NavDropdown
-                    title="Dropdown"
+                    title="Menu"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                    <NavDropdown.Item href="#action3">Mi perfil</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                      Another action
+                      Configuración
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                      Something else here
+                      Cerrar sesión
                     </NavDropdown.Item>
                   </NavDropdown>
                   
