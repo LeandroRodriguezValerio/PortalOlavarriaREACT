@@ -2,3 +2,11 @@
     background-image: linear-gradient(to right, #206491, #284177); /* Degradado de naranja a melocotón */
     color: white; /* Asegúrate de que el texto sea visible */
 }
+.nav-link{
+    font-weight: bold;
+    font-size: larger;
+    color: rgb(176, 190, 222);
+}
+.nav-link:hover{
+    color: rgb(77, 187, 150);
+}
