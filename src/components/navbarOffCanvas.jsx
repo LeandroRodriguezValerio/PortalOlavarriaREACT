@@ -34,7 +34,7 @@ function OffcanvasExample() {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                  Portal Olavarria
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
