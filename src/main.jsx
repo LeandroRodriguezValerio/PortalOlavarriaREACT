@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 
 import { Navbar } from './components/navbar.jsx'
 import OffcanvasExample from './components/navbarOffCanvas.jsx'
+import Footer from './components/footer.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -11,6 +12,6 @@ createRoot(document.getElementById('root')).render(
     
     <OffcanvasExample />
    
-    
+    <Footer />
   </StrictMode>,
 )
