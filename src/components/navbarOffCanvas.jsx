@@ -41,20 +41,20 @@ function OffcanvasExample() {
                 <Nav className="justify-content-start flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Inicio</Nav.Link>
                   <Nav.Link href="#action2">Eventos</Nav.Link>
-                  <Nav.Link href="#action1">Mascotas</Nav.Link>
-                  <Nav.Link href="#action2">Ayuda</Nav.Link>
-                  <Nav.Link href="#action1">Iniciar sesión</Nav.Link>
-                  <Nav.Link href="#action2">Registrarse</Nav.Link>
+                  <Nav.Link href="#action3">Mascotas</Nav.Link>
+                  <Nav.Link href="#action4">Ayuda</Nav.Link>
+                  <Nav.Link href="#action5">Iniciar sesión</Nav.Link>
+                  <Nav.Link href="#action6">Registrarse</Nav.Link>
                   <NavDropdown
                     title="Menu"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action3">Mi perfil</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
+                    <NavDropdown.Item href="#action7">Mi perfil</NavDropdown.Item>
+                    <NavDropdown.Item href="#action8">
                       Configuración
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item href="#action9">
                       Cerrar sesión
                     </NavDropdown.Item>
                   </NavDropdown>
