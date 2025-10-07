@@ -1,4 +1,4 @@
-import imagen from '../assets/IMG/Portal Olavarria - FallTech(7).png';
+
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect } from 'react';
@@ -45,13 +45,6 @@ export default function Publicacion() {
                 });
             })
             .catch(error => console.error('Error al cargar las mascotas:', error));
-            
-
-
-
-
-
-
 
         // Limpiar el mapa al desmontar el componente
         return () => {
