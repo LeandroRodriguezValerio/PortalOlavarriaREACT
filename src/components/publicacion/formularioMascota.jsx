@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "./formularioMascota.css";
 
 export default function FormularioMascota({ onPublicar }) {
     const mapaFormRef = useRef(null);
@@ -100,6 +101,7 @@ export default function FormularioMascota({ onPublicar }) {
                 ...prev,
                 latitud: "",
                 longitud: "",
+                direccion: "",
             }));
         }
     };

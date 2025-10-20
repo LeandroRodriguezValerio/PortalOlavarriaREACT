@@ -40,7 +40,7 @@ export default function Publicacion() {
             .then(response => response.json())
             .then(data => {
                 data.forEach(mascota => {
-                    L.marker([mascota.latitud, mascota.longitud], { icon: miIcono }).addTo(map)
+                    L.marker([mascota.lat, mascota.lng], { icon: miIcono }).addTo(map)
                         .bindPopup(`<b>${mascota.nombre}</b><br>${mascota.descripcion}`);
                 });
             })
