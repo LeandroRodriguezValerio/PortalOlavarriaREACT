@@ -1,14 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import OffcanvasExample from './components/navbarOffCanvas.jsx'
-import Footer from './components/footer.jsx'
+import App from './App.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './index.css'
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    
-    <OffcanvasExample />
-   
-    <Footer />
+    <App />  
   </StrictMode>,
 )
