@@ -95,8 +95,7 @@ export default function MapaMarcadores() {
             {
                 name: "Linea 505",
                 url: "https://mapas.olavarria.gov.ar/geoserver/ows?service=wfs&version=1.0.0&request=GetFeature&typeName=ide:linea_505&maxFeatures=10000&outputFormat=application/json"
-            }
-            // agregar más fuentes si hace falta...
+            }            
         ];
 
         const overlays = {};

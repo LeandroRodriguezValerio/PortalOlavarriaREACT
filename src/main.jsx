@@ -6,12 +6,15 @@ import { Navbar } from './components/navbar.jsx'
 import Publicacion from './components/publicacion/publicacion.jsx'
 import FormularioMascota from './components/publicacion/formularioMascota.jsx'
 import MapaMarcadores from './components/mapaInformativo/MapaMarcadores.jsx'
+import Mapa from './components/mapaInformativo/Mapa.jsx'
+import MapaInicio from './components/mapaInformativo/MapaInicio.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <App />
+    {/* <App /> */}
     {/* <Publicacion /> */}
-    <FormularioMascota />
-    <MapaMarcadores />
+    {/* <FormularioMascota /> */}
+    {/* <MapaMarcadores /> */}
+    <MapaInicio />
   </StrictMode>,
 )
