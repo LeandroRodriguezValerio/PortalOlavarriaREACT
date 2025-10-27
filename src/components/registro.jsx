@@ -17,7 +17,7 @@ export default function Registro() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Si el campo es teléfono, permitir solo números
+    
     if (name === "telefono" && /[^0-9]/.test(value)) return;
     setForm({ ...form, [name]: value });
   };
@@ -33,7 +33,7 @@ export default function Registro() {
 
     setMensaje("Registro realizado con éxito");
     setTimeout(() => {
-      window.location.href = "/"; // o usar react-router-dom para redirigir
+      window.location.href = "/"; 
     }, 2000);
   };
 
