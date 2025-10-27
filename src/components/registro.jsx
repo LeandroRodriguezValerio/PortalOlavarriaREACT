@@ -1,6 +1,5 @@
 import { useState } from "react";
-import "./style.css";
-import "./styleMascotas.css";
+import "./registro.css";
 
 export default function Registro() {
   const [form, setForm] = useState({
@@ -46,7 +45,7 @@ export default function Registro() {
   };
 
   return (
-    <main className="formulario">
+    <main className="registro-page">
       <form className="formlogin" onSubmit={validarFormulario}>
         <h2>Registro de usuario</h2>
 

@@ -1,10 +1,10 @@
 import imglogo from '../assets/IMG/LogoPO.png'
 import './navbar.css' 
+import { Link } from "react-router-dom";
 
 
 
-
-export function  Navbar() {
+export default function  Navbar() {
   return (
    <nav id="mainNavbar" className="navbar-estilosa">
         <div className="navbar-container">
@@ -20,7 +20,7 @@ export function  Navbar() {
                 <li><a href="./HTML/mascotas.html">Mascotas perdidas</a></li>
                 <li><a href="./HTML/ayuda.html">Ayuda</a></li>
                 <li><a href="#" onClick=" borrar(); abrirPopup();" className="vistaEdicion">Iniciar sesión</a></li>
-                <li><a href="./HTML/login.html">Registrarse</a></li>
+               <li><Link to="/registro">Registrarse</Link></li>
             </ul>
             <a href="./index.html" className="navbar-logo">
                 <img src={imglogo} alt="Logo Portal Olavarría" />
