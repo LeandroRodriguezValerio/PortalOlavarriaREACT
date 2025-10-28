@@ -1,20 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App.jsx'
-import { Navbar } from './components/navbar.jsx'
-import Publicacion from './components/publicacion/publicacion.jsx'
-import FormularioMascota from './components/publicacion/formularioMascota.jsx'
-import MapaMarcadores from './components/mapaInformativo/MapaMarcadores.jsx'
-import Mapa from './components/mapaInformativo/Mapa.jsx'
-import MapaInicio from './components/mapaInformativo/MapaInicio.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './index.css'
+
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
-    {/* <App /> */}
-    {/* <Publicacion /> */}
-    {/* <FormularioMascota /> */}
-    {/* <MapaMarcadores /> */}
-    <MapaInicio />
+    <App />  
   </StrictMode>,
 )

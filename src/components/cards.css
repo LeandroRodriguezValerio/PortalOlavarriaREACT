@@ -1,0 +1,84 @@
+.fakebutton {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3cb7e7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.cerrar:hover {
+  color: #000;
+}
+
+.btnPublicacion {
+  background: #035397;
+  color: white !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+#descripcion {
+  width: 270px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+#tipoPublicacion {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+
+div div #containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.btn-success {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-success:hover {
+  background: #3e8e41;
+}
