@@ -56,11 +56,10 @@ export default function Publicacion() {
 
     return (
         <div className="mapa-titulo">
-            {/* <img src={imagen} alt="Mascota" /> */}
-            <h2>Ubicación de la mascota perdida</h2>
+           <>
+           {/* <img src={imagen} alt="Mascota" /> */}     
             <div id="map" style={{ height: '400px', width: '100%' }}></div>
-
-
+           </>
         </div>
     )
 }

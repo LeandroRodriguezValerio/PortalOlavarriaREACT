@@ -4,18 +4,23 @@ import OffcanvasExample from "./components/navbarOffCanvas";
 import Footer from "./components/footer";
 import CardsContainer from "./components/cardContainer";
 import PublicacionPopup from "./components/bodyTemporal";
-
+import Publicacion from "./components/publicacion/publicacion";
+import Perfil from "./components/perfil/perfil.jsx";
 export default function App() {
   return (
     <>
-       <OffcanvasExample />
-      <div className="main-content">
+       {/* <OffcanvasExample />
+       <Publicacion />
+       <div className="main-content">
         <div className="container">
           <CardsContainer />
+         
         </div>
       </div>
       <PublicacionPopup />
-      <Footer />
+      <Footer /> */}
+
+      <Perfil />
     </>
   );
 }
