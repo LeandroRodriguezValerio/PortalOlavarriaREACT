@@ -7,6 +7,7 @@ import PublicacionPopup from "./components/bodyTemporal";
 import Publicacion from "./components/publicacion/publicacion";
 import Perfil from "./components/perfil/perfil.jsx";
 import CarouselInicio from "./components/Carousel/Carousel.jsx";
+import Ayuda from "./components/Ayuda/Ayuda.jsx";
 export default function App() {
   return (
     <>
@@ -23,6 +24,7 @@ export default function App() {
       <Footer /> */}
 
       {/* <Perfil /> */}
+      <Ayuda />
     </>
   );
 }
