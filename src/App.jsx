@@ -6,9 +6,11 @@ import CardsContainer from "./components/cardContainer";
 import PublicacionPopup from "./components/bodyTemporal";
 import Publicacion from "./components/publicacion/publicacion";
 import Perfil from "./components/perfil/perfil.jsx";
+import CarouselInicio from "./components/Carousel/Carousel.jsx";
 export default function App() {
   return (
     <>
+    <CarouselInicio />
        {/* <OffcanvasExample />
        <Publicacion />
        <div className="main-content">
@@ -20,7 +22,7 @@ export default function App() {
       <PublicacionPopup />
       <Footer /> */}
 
-      <Perfil />
+      {/* <Perfil /> */}
     </>
   );
 }
