@@ -1,4 +1,4 @@
-/* --- Fondo general --- */
+
 .registro-page {
   min-height: 100vh;
   width: 100%;
@@ -21,7 +21,7 @@
   backdrop-filter: blur(2px);
 }
 
-/* --- Formulario --- */
+
 .formlogin {
   position: relative;
   z-index: 1;
@@ -43,7 +43,7 @@
   color: #333;
 }
 
-/* --- Campos --- */
+
 .formlogin label {
   font-weight: 600;
   color: #333;
@@ -63,7 +63,7 @@
   box-shadow: 0 0 5px rgba(0, 119, 255, 0.4);
 }
 
-/* --- Botones --- */
+
 .formlogin button {
   padding: 0.8rem;
   border: none;
@@ -88,7 +88,7 @@
   background-color: #777;
 }
 
-/* --- Mensaje de éxito --- */
+
 #mensaje-exito {
   position: fixed;
   bottom: 20px;
