@@ -3,10 +3,10 @@ import Swal from "sweetalert2";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const API_URL = "http://localhost:3000/posts"; // tu endpoint backend
-
 export default function FormularioMascotaSweetAlert({ onPublicar }) {
-  const [lista, setLista] = useState([]);
+  const [lista, setLista] = useState(
+    JSON.parse(localStorage.getItem("listaEventoMascotas") || "[]")
+  );
 
   const crearPublicacion = async () => {
     let mapa, marcador;
@@ -23,20 +23,23 @@ export default function FormularioMascotaSweetAlert({ onPublicar }) {
         <div id="mapaForm" style="height:300px; margin-top:10px; border-radius:10px;"></div>
       `,
       didOpen: () => {
-        mapa = L.map("mapaForm").setView([-19.6333, -43.8667], 13); // centro en Minas Gerais aprox
+        // Inicializar mapa
+        mapa = L.map("mapaForm").setView([-36.89384, -60.32319], 13);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution: "&copy; OpenStreetMap contributors",
         }).addTo(mapa);
 
+        // Geolocalización automática
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition((pos) => {
             const lat = pos.coords.late;
-            const lon = pos.coords.longitude;
+            const lon = pos.coords.lnge;
             mapa.setView([lat, lon], 15);
             L.marker([lat, lon]).addTo(mapa).bindPopup("Tu ubicación actual");
           });
         }
 
+        // Click en el mapa
         mapa.on("click", (e) => {
           const { lat, lng } = e.latlng;
           if (marcador) mapa.removeLayer(marcador);
@@ -45,6 +48,7 @@ export default function FormularioMascotaSweetAlert({ onPublicar }) {
           mapa.lng = lng;
         });
 
+        // Botón buscar dirección
         document.getElementById("buscarBtn").addEventListener("click", async () => {
           const dir = document.getElementById("direccion").value.trim();
           if (!dir) {
@@ -55,7 +59,6 @@ export default function FormularioMascotaSweetAlert({ onPublicar }) {
             dir
           )}`;
           const res = await fetch(url);
-          console.log(res);
           const data = await res.json();
           if (data.length > 0) {
             const lat = parseFloat(data[0].lat);
@@ -72,7 +75,6 @@ export default function FormularioMascotaSweetAlert({ onPublicar }) {
               text: "Prueba con una ubicación más precisa.",
             });
           }
-          console.log("LAT LNG "+ mapa.lat, mapa.lng);
         });
       },
       preConfirm: () => {
@@ -97,7 +99,6 @@ export default function FormularioMascotaSweetAlert({ onPublicar }) {
           direccion,
           lat: mapa.lat,
           lng: mapa.lng,
-          usuarioUsuarioId: 5, // valor fijo por ahora
         };
       },
       confirmButtonText: "Publicar",
@@ -105,39 +106,23 @@ export default function FormularioMascotaSweetAlert({ onPublicar }) {
       showCancelButton: true,
       confirmButtonColor: "#28a745",
     });
-
+           
     if (!formValues) return;
 
-    try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formValues),
-       
-      });
-        console.log(formValues)
-      if (!res.ok) throw new Error("Error al guardar en la base de datos");
+    // Guardar en localStorage
+    const nuevaLista = [...lista, formValues];
+    localStorage.setItem("listaEventoMascotas", JSON.stringify(nuevaLista));
+    setLista(nuevaLista);
+    if (onPublicar) onPublicar(formValues);
 
-      const data = await res.json();
-      setLista([...lista, data]);
-      if (onPublicar) onPublicar(data);
-
-      Swal.fire({
-        icon: "success",
-        title: "¡Publicación agregada! 🐶",
-        text: "La mascota se publicó correctamente.",
-        timer: 2000,
-        showConfirmButton: false,
-      });
-    } catch (err) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "No se pudo guardar en la base de datos 😞",
-      });
-    }
-
-    console.log(formValues);
+    Swal.fire({
+      icon: "success",
+      title: "¡Publicación agregada! 🐶",
+      text: "La mascota se publicó correctamente.",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+     console.log(formValues);
   };
 
   return (
