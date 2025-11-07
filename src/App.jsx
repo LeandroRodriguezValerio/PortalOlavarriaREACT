@@ -14,25 +14,21 @@ import Formulario from "./components/formulario";
 export default function App() {
   return (
     <>
-    <CarouselInicio />
-       <OffcanvasExample />
-       <Publicacion />
-       <div className="main-content">
-       <OffcanvasExample />
-       <MapaInicio />
+      <OffcanvasExample />
+      <CarouselInicio />
+      {/* <Publicacion /> */}
+
+      <MapaInicio />
       <div className="main-content">
         <div className="container">
           <Formulario />
           <CardsContainer />
-         
         </div>
       </div>
       <PublicacionPopup />
-      <Footer /> 
-
       {/* <Perfil /> */}
       <Ayuda />
-      
+
       <Footer />
     </>
   );

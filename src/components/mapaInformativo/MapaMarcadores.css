@@ -77,7 +77,7 @@
 
 /* Ajustes responsive */
 @media (max-width: 600px) {
-  .leaflet-control-layers { width: 200px; font-size: 13px; }
+  .leaflet-control-layers { width: auto; font-size: 13px; }
 }
 
 
