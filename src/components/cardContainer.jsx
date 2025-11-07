@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Card from "./card";
 import Formulario from "./formulario";
-import FormularioMascotaSweetAlert from "./publicacion/formularioSweetAlert";
+
 import "./cards.css";
 
 const BASE_URL = "http://localhost:3000/posts";
@@ -112,7 +112,7 @@ export default function CardsContainer() {
   return (
     <div className="cards-container">
       
-      <Formulario />
+      
      
       {posts.length > 0 ? (
         posts

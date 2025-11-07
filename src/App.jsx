@@ -6,6 +6,7 @@ import CardsContainer from "./components/cardContainer";
 import PublicacionPopup from "./components/bodyTemporal";
 import MapaMarcadores from "./components/mapaInformativo/MapaMarcadores";
 import MapaInicio from "./components/mapaInformativo/MapaInicio";
+import Formulario from "./components/formulario";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
        <MapaInicio />
       <div className="main-content">
         <div className="container">
+          <Formulario />
           <CardsContainer />
         </div>
       </div>

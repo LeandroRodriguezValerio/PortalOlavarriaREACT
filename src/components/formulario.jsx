@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 
 const API_URL = "http://localhost:3000/posts"; // tu endpoint backend
 
-export default function FormularioMascotaSweetAlert({ onPublicar }) {
+export default function Formulario({ onPublicar }) {
   const [lista, setLista] = useState([]);
 
   const crearPublicacion = async () => {
