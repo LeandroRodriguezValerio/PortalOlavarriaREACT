@@ -11,6 +11,7 @@ import Ayuda from "./components/Ayuda/Ayuda.jsx";
 import MapaMarcadores from "./components/mapaInformativo/MapaMarcadores";
 import MapaInicio from "./components/mapaInformativo/MapaInicio";
 import Formulario from "./components/formulario";
+import Registro from "./components/registro/Registro.jsx";
 export default function App() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function App() {
       </div>
       <PublicacionPopup />
       {/* <Perfil /> */}
+      {/* <Registro/> */}
       <Ayuda />
 
       <Footer />
