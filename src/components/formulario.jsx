@@ -1,101 +1,131 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
-import Card from "./card";
-import "./cards.css";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
-const BASE_URL = "http://localhost:3000/posts";
+const API_URL = "http://localhost:3000/posts"; // tu endpoint backend
 
-export default function Formulario() {
-  const [posts, setPosts] = useState([]);
-   const [loading, setLoading] = useState(true);
+export default function Formulario({ onPublicar }) {
+  const [lista, setLista] = useState([]);
 
-  // ✅ POST - crear nueva publicación (formulario con SweetAlert2)
-  const createPost = async () => {
+  const crearPublicacion = async () => {
+    let mapa, marcador;
+
     const { value: formValues } = await Swal.fire({
-      title: "Nueva publicación 🐾",
+      title: "🐾 Nueva mascota perdida",
+      width: 600,
       html: `
-        <input id="nombre" class="swal2-input" placeholder="Nombre de la mascota">
+        <input id="nombre" class="swal2-input" placeholder="Nombre">
         <input id="contacto" class="swal2-input" placeholder="Contacto">
-        <input id="direccion" class="swal2-input" placeholder="Dirección">
         <textarea id="descripcion" class="swal2-textarea" placeholder="Descripción"></textarea>
+        <input id="direccion" class="swal2-input" placeholder="Dirección">
+        <button id="buscarBtn" class="swal2-confirm swal2-styled" style="margin-top:5px; background-color:#3085d6;">Buscar dirección</button>
+        <div id="mapaForm" style="height:300px; margin-top:10px; border-radius:10px;"></div>
       `,
-      focusConfirm: false,
-      showCancelButton: true,
-      confirmButtonText: "Publicar",
-      cancelButtonText: "Cancelar",
+      didOpen: () => {
+        mapa = L.map("mapaForm").setView([-19.6333, -43.8667], 13); // centro en Minas Gerais aprox
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "&copy; OpenStreetMap contributors",
+        }).addTo(mapa);
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((pos) => {
+            const lat = pos.coords.late;
+            const lon = pos.coords.longitude;
+            mapa.setView([lat, lon], 15);
+            L.marker([lat, lon]).addTo(mapa).bindPopup("Tu ubicación actual");
+          });
+        }
+
+        mapa.on("click", (e) => {
+          const { lat, lng } = e.latlng;
+          if (marcador) mapa.removeLayer(marcador);
+          marcador = L.marker([lat, lng]).addTo(mapa);
+          mapa.lat = lat;
+          mapa.lng = lng;
+        });
+
+        document.getElementById("buscarBtn").addEventListener("click", async () => {
+          const dir = document.getElementById("direccion").value.trim();
+          if (!dir) {
+            Swal.showValidationMessage("Ingrese una dirección primero");
+            return;
+          }
+          const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+            dir
+          )}`;
+          const res = await fetch(url);
+          console.log(res);
+          const data = await res.json();
+          if (data.length > 0) {
+            const lat = parseFloat(data[0].lat);
+            const lon = parseFloat(data[0].lon);
+            mapa.setView([lat, lon], 16);
+            if (marcador) mapa.removeLayer(marcador);
+            marcador = L.marker([lat, lon]).addTo(mapa);
+            mapa.lat = lat;
+            mapa.lng = lon;
+          } else {
+            Swal.fire({
+              icon: "warning",
+              title: "No se encontró la dirección",
+              text: "Prueba con una ubicación más precisa.",
+            });
+          }
+          console.log("LAT LNG "+ mapa.lat, mapa.lng);
+        });
+      },
       preConfirm: () => {
+        const nombre = document.getElementById("nombre").value.trim();
+        const contacto = document.getElementById("contacto").value.trim();
+        const descripcion = document.getElementById("descripcion").value.trim();
+        const direccion = document.getElementById("direccion").value.trim();
+
+        if (!nombre || !contacto || !descripcion || !direccion) {
+          Swal.showValidationMessage("Todos los campos son obligatorios");
+          return false;
+        }
+        if (!mapa.lat || !mapa.lng) {
+          Swal.showValidationMessage("Seleccione una ubicación en el mapa");
+          return false;
+        }
+
         return {
-          nombre: document.getElementById("nombre").value.trim(),
-          contacto: document.getElementById("contacto").value.trim(),
-          direccion: document.getElementById("direccion").value.trim(),
-          descripcion: document.getElementById("descripcion").value.trim(),
+          nombre,
+          contacto,
+          descripcion,
+          direccion,
+          lat: mapa.lat,
+          lng: mapa.lng,
+          usuarioUsuarioId: 5, // valor fijo por ahora
         };
       },
+      confirmButtonText: "Publicar",
+      cancelButtonText: "Cancelar",
+      showCancelButton: true,
+      confirmButtonColor: "#28a745",
     });
 
     if (!formValues) return;
 
-    if (!formValues.nombre || !formValues.contacto) {
-      return Swal.fire({
-        icon: "warning",
-        title: "Campos incompletos",
-        text: "Por favor, completá al menos el nombre y contacto 🐶",
-      });
-    }
-
     try {
-      const res = await fetch(BASE_URL, {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formValues),
+       
       });
-      const data = await res.json();
-      setPosts([...posts, data]);
-
-      Swal.fire({
-        icon: "success",
-        title: "¡Publicación creada!",
-        text: "Tu publicación fue agregada correctamente 🐾",
-        timer: 2000,
-        showConfirmButton: false,
-      });
-    } catch (err) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "No se pudo crear la publicación 😢",
-      });
-    }
-  };
-
-  // ✅ PUT - editar publicación
-  const editPost = async (id, post) => {
-    const { value: nuevoNombre } = await Swal.fire({
-      title: "Editar publicación",
-      input: "text",
-      inputLabel: "Nuevo nombre de la mascota",
-      inputValue: post.nombre,
-      showCancelButton: true,
-      confirmButtonText: "Guardar cambios",
-      cancelButtonText: "Cancelar",
-    });
-
-    if (!nuevoNombre) return;
-
-    try {
-      const res = await fetch(`${BASE_URL}/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...post, nombre: nuevoNombre }),
-      });
+        console.log(formValues)
+      if (!res.ok) throw new Error("Error al guardar en la base de datos");
 
       const data = await res.json();
-      setPosts(posts.map((p) => (p.id === id ? data : p)));
+      setLista([...lista, data]);
+      if (onPublicar) onPublicar(data);
 
       Swal.fire({
         icon: "success",
-        title: "Actualizado",
-        text: "La publicación fue editada correctamente ✏️",
+        title: "¡Publicación agregada! 🐶",
+        text: "La mascota se publicó correctamente.",
         timer: 2000,
         showConfirmButton: false,
       });
@@ -103,54 +133,22 @@ export default function Formulario() {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "No se pudo editar la publicación 😔",
+        text: "No se pudo guardar en la base de datos 😞",
       });
     }
+
+    console.log(formValues);
   };
-
-  // ✅ DELETE - eliminar publicación
-  const deletePost = async (id) => {
-    const confirm = await Swal.fire({
-      title: "¿Eliminar publicación?",
-      text: "Esta acción no se puede deshacer.",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Sí, eliminar",
-      cancelButtonText: "Cancelar",
-    });
-
-    if (!confirm.isConfirmed) return;
-
-    try {
-      await fetch(`${BASE_URL}/${id}`, { method: "DELETE" });
-      setPosts(posts.filter((p) => p.id !== id));
-
-      Swal.fire({
-        icon: "success",
-        title: "Eliminada",
-        text: "La publicación fue eliminada correctamente 🗑️",
-        timer: 2000,
-        showConfirmButton: false,
-      });
-    } catch (err) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "No se pudo eliminar la publicación 😞",
-      });
-    }
-  };
-
- 
 
   return (
-    <div className="cards-container">
-      <button className="btn btn-success" onClick={createPost}>
-        ➕ Nueva publicación
+    <div style={{ textAlign: "center", marginTop: "1rem" }}>
+      <button
+        className="btn btn-success"
+        style={{ padding: "10px 20px", borderRadius: "8px", cursor: "pointer" }}
+        onClick={crearPublicacion}
+      >
+        ➕ Agregar mascota perdida
       </button>
-
     </div>
   );
 }
