@@ -82,3 +82,13 @@ div div #containerCards {
 .btn-success:hover {
   background: #3e8e41;
 }
+.card-buttons {
+/* //alinear todos los botones abajo de la tarjeta */
+  display: flex;
+  justify-content:center;
+}
+.card-desc {
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

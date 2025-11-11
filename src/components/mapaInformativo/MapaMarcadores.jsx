@@ -163,7 +163,7 @@ export default function MapaMarcadores() {
     return (
          <div className="mapa-titulo">
             <>
-                <div id="map" style={{ height: '800px', width: '800px' }}></div>
+                <div id="map" style={{ height: '300px', width: '800px' }}></div>
               
             </>
         </div>

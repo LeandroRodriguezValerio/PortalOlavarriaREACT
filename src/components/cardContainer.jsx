@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Card from "./card";
-import Formulario from "./formulario";
+import Formulario from "./publicacion/formulario";
 
 import "./cards.css";
 
@@ -107,6 +107,49 @@ export default function CardsContainer() {
     }
   };
 
+    // ✅ PUT - editar publicación
+  const reportPost = async (id, post) => {
+    const { value: nuevoNombre } = await Swal.fire({
+      title: "Reportar publicación",
+      input: "text",
+      inputLabel: "Describe el problema",
+      inputValue: post.nombre,
+      showCancelButton: true,
+      confirmButtonText: "Guardar cambios",
+      cancelButtonText: "Cancelar",
+    });
+
+    if (!nuevoNombre) return;
+
+    try {
+      const res = await fetch(`${BASE_URL}/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...post, nombre: nuevoNombre }),
+      });
+
+      const data = await res.json();
+      setPosts(posts.map((p) => (p.id === id ? data : p)));
+
+      Swal.fire({
+        icon: "success",
+        title: "Actualizado",
+        text: "La publicación fue reportada correctamente ✏️",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    } catch (err) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se reporto la publicación 😔",
+      });
+    }
+  };
+
+  
+
+
   if (loading) return <p>Cargando publicaciones...</p>;
 
   return (
@@ -124,6 +167,7 @@ export default function CardsContainer() {
               index={index}
               onDelete={() => deletePost(post.id)}
               onEdit={() => editPost(post.id, post)}
+              onReport={() => reportPost(post.id, post)}
             />
           ))
       ) : (

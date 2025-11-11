@@ -40,7 +40,7 @@ function OffcanvasExample() {
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Inicio</Nav.Link>
-                  <Nav.Link href="#action2">Eventos</Nav.Link>
+                  {/* <Nav.Link href="#action2">Eventos</Nav.Link> */}
                   <Nav.Link href="#action3">Mascotas</Nav.Link>
                   <Nav.Link href="#action4">Ayuda</Nav.Link>
                   <Nav.Link href="#action5">Iniciar sesión</Nav.Link>

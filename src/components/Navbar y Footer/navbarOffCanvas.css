@@ -5,9 +5,19 @@
 .nav-link{
     font-weight: bold;
     font-size: larger;
-    color: rgb(176, 190, 222);
+    color: rgb(247, 249, 254);
 }
 .nav-link:hover{
     color: rgb(77, 187, 150);
 }
 
+.navbar-toggler{
+    margin-right: 10px;
+}
+
+.offcanvas-end{
+ background-image: linear-gradient(to right, #206491, #284177); /* Degradado de naranja a melocotón */
+}
+#offcanvasNavbarLabel-expand-lg{
+    color: white;
+}

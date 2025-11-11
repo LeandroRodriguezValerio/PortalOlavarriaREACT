@@ -23,11 +23,15 @@ export default function Card({ element = {}, index, onDelete, onEdit }) {
         <p className="card-desc">{descripcion || "Sin descripción"}</p>
 
         <div className="card-buttons">
-          <button className="btn btn-warning" onClick={onEdit}>
-            ✏️ Editar
+          <button className="btn btn-primary" onClick={onEdit}>
+            ✏️ 
           </button>
           <button className="btn btn-danger" onClick={onDelete}>
-            🗑️ Eliminar
+            🗑️ 
+          </button>
+          {/* Cambiar onEdit por onReport algun dia */}
+          <button className="btn btn-warning" onClick={onEdit}>
+            ⚠️
           </button>
         </div>
       </div>
