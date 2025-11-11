@@ -1,5 +1,5 @@
 .mi-navbar-personalizado {
-    background-image: linear-gradient(to right, #206491, #284177); /* Degradado de naranja a melocotón */
+    background-image: linear-gradient(to right, #206491, #284177); 
     color: white; /* Asegúrate de que el texto sea visible */
 }
 .nav-link{
@@ -16,7 +16,7 @@
 }
 
 .offcanvas-end{
- background-image: linear-gradient(to right, #206491, #284177); /* Degradado de naranja a melocotón */
+ background-image: linear-gradient(to right, #206491, #284177); 
 }
 #offcanvasNavbarLabel-expand-lg{
     color: white;

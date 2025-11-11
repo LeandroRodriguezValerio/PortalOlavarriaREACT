@@ -27,7 +27,7 @@ export default function App() {
         </div>
       </div>
       <PublicacionPopup />
-      {/* <Perfil /> */}
+      <Perfil />
       {/* <Registro/> */}
       <Ayuda />
       <Footer />
