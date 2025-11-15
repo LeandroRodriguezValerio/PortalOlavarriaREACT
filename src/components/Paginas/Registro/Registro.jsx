@@ -1,7 +1,7 @@
   
 
 import { useState } from "react";
-import "./registro.css";
+import "./Registro.css";
 
 export default function Registro() {
   const [form, setForm] = useState({

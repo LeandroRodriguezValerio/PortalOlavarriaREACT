@@ -36,7 +36,7 @@ export default function Publicacion() {
             .openPopup();
 
         // Cargar marcadores de la base de datos
-        const listadoMascotas = fetch('http://localhost:3000/mascotas')
+        const listadoMascotas = fetch('http://localhost:3000/posts')
             .then(response => response.json())
             .then(data => {
                 data.forEach(mascota => {
