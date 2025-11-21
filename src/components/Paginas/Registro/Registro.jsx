@@ -1,37 +1,70 @@
   
-
+import Swal from "sweetalert2";
 import { useState } from "react";
 import "./Registro.css";
 
-export default function Registro() {
-  const [form, setForm] = useState({
+const API_URL = "http://localhost:3000/users"; // tu endpoint backend
+
+export default function Registro({onPublicar}) {
+  const initialForm = {
     nombre: "",
     apellido: "",
-    telefono: "",
-    dni: "",
-    nacimiento: "",
     email: "",
-    password: "",
-    repeatPassword: "",
-  });
+    contrasenia: "",
+    repeatcontrasenia: "",
+  };
 
+  const [form, setForm] = useState(initialForm);
   const [mensaje, setMensaje] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
-    if (name === "telefono" && /[^0-9]/.test(value)) return;
     setForm({ ...form, [name]: value });
   };
 
-  const validarFormulario = (e) => {
+  const validarFormulario = async (e) => {
     e.preventDefault();
 
-    if (form.password !== form.repeatPassword) {
+    if (form.contrasenia !== form.repeatcontrasenia) {
       alert("Las contraseñas no coinciden.");
-      setForm({ ...form, password: "", repeatPassword: "" });
+      setForm({ ...form, contrasenia: "", repeatcontrasenia: "" });
       return;
     }
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      console.log(form);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || "Error al guardar en la base de datos");
+      }
+
+      const data = await res.json();
+      setForm(initialForm);
+      if (onPublicar) onPublicar(data);
+
+      Swal.fire({
+        icon: "success",
+        title: "Registro exitoso! ",
+        text: "Tu usuario se registro correctamente.",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+
+    } catch (err) {
+      console.error(err);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo guardar en la base de datos 😞",
+      });
+      return;
+    }
+
 
     setMensaje("Registro realizado con éxito");
     setTimeout(() => {
@@ -72,38 +105,7 @@ export default function Registro() {
           value={form.apellido}
           onChange={handleChange}
         />
-
-        <label>Teléfono</label>
-        <input
-          type="tel"
-          name="telefono"
-          pattern="[0-9]{8,}"
-          placeholder="2284123456"
-          required
-          value={form.telefono}
-          onChange={handleChange}
-        />
-
-        <label>DNI</label>
-        <input
-          type="text"
-          name="dni"
-          pattern="[0-9]{7,}"
-          placeholder="01234567"
-          required
-          value={form.dni}
-          onChange={handleChange}
-        />
-
-        <label>Fecha de Nacimiento</label>
-        <input
-          type="date"
-          name="nacimiento"
-          required
-          value={form.nacimiento}
-          onChange={handleChange}
-        />
-
+       
         <label>Correo electrónico</label>
         <input
           type="email"
@@ -117,21 +119,21 @@ export default function Registro() {
         <label>Contraseña</label>
         <input
           type="password"
-          name="password"
+          name="contrasenia"
           placeholder="Escriba su contraseña"
           required
           minLength="6"
-          value={form.password}
+          value={form.contrasenia}
           onChange={handleChange}
         />
 
         <label>Repetir contraseña</label>
         <input
           type="password"
-          name="repeatPassword"
+          name="repeatcontrasenia"
           placeholder="Repita su contraseña"
           required
-          value={form.repeatPassword}
+          value={form.repeatcontrasenia}
           onChange={handleChange}
         />
 
