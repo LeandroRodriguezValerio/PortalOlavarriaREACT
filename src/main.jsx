@@ -10,8 +10,9 @@ import Ayuda from './components/Paginas/Ayuda/Ayuda.jsx';
 import Mascotas from './components/Paginas/Mascotas/Mascotas.jsx';
 import Home from './components/Paginas/Home/Home.jsx';
 import Compartido from './components/Paginas/Compartido/Compartido.jsx';
-import Ingreso from './components/Paginas/Ingreso/Ingreso.jsx';
+import Login from './components/Paginas/Login/login.jsx';
 import Registro from './components/Paginas/Registro/Registro.jsx';
+import Perfil from './components/Paginas/Perfil/perfil.jsx';
 
 const Router = createBrowserRouter([
   { 
@@ -31,12 +32,16 @@ const Router = createBrowserRouter([
         element: <Ayuda />
       },
       {
-        path: "ingreso",
-        element: <Ingreso /> 
+        path: "login",
+        element: <Login /> 
       },
       {
         path: "registro",
         element: <Registro />
+      },
+       {
+        path: "perfil",
+        element: <Perfil />
       }
     ]
    },

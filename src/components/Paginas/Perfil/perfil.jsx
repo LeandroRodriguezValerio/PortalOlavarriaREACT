@@ -1,4 +1,4 @@
-import perroperdido from '../../assets/IMG/perroperdido.jpg';
+import perroperdido from '../../../assets/IMG/perroperdido.jpg';
 import './perfil.css';
 function Perfil() {
     return (

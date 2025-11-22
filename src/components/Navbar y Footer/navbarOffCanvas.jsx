@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { NavLink, useNavigate } from 'react-router-dom';
+import Login from '../Paginas/Login/login';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavbarOffCanvas.css'
@@ -45,13 +46,18 @@ function OffcanvasExample() {
                   {/* <Nav.Link href="#action2">Eventos</Nav.Link> */}
                   <NavLink to="mascotas" className='NavLink'>Mascotas</NavLink>
                   <NavLink to="ayuda" className='NavLink'>Ayuda</NavLink>
-                  <NavLink to="ingreso" className='NavLink'>Iniciar sesión</NavLink>
+                   <Login/> 
+                 
                   <NavLink to="registro" className='NavLink'>Registrarse</NavLink>
                   <NavDropdown
                     title="Menu"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action7" className='NavLink'>Mi perfil</NavDropdown.Item>
+                    <NavDropdown.Item className='NavLink' > 
+                       <NavLink to="perfil" className='NavLink'>Mi perfil </NavLink>
+
+                    </NavDropdown.Item>
+
                     <NavDropdown.Item href="#action8">
                       Configuración
                     </NavDropdown.Item>

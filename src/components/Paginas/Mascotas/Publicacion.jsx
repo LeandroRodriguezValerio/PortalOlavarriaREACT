@@ -24,7 +24,7 @@ export default function Publicacion() {
                         .openPopup();
                 },
                 function (error) {
-                    alert("No se pudo obtener tu ubicación: " + error.message);
+                    console.log("No se pudo obtener tu ubicación: " + error.message);
                 }
             );
         } else {
