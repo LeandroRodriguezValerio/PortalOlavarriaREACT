@@ -60,7 +60,7 @@ export default function Login() {
 
       const usuario = data.user ?? data.usuario ?? null;
       if (usuario) localStorage.setItem("user", JSON.stringify(usuario));
-
+   console.log("Login successful for user:", usuario);
       Swal.fire({ icon: "success", title: "Bienvenido", text: usuario ? (usuario.nombre ?? "") : "" });
       navigate("/perfil");
     } catch (error) {

@@ -8,6 +8,11 @@ const API_URL = "http://localhost:3000/posts"; // tu endpoint backend
 export default function Formulario({ onPublicar }) {
   const [lista, setLista] = useState([]);
 
+const usuario = JSON.parse(localStorage.getItem("user"));
+console.log(usuario.usuario_id);
+
+
+
   const crearPublicacion = async () => {
     let mapa, marcador;
 
@@ -85,6 +90,7 @@ export default function Formulario({ onPublicar }) {
           this.style.height = this.scrollHeight + "px";
         });
       },
+      
       preConfirm: () => {
         const nombre = document.getElementById("nombre").value.trim();
         const contacto = document.getElementById("contacto").value.trim();
@@ -107,7 +113,7 @@ export default function Formulario({ onPublicar }) {
           direccion,
           lat: mapa.lat,
           lng: mapa.lng,
-          usuarioUsuarioId: 5, // valor fijo por ahora
+          usuarioUsuarioId: usuario.usuario_id, // valor fijo por ahora
         };
       },
       confirmButtonText: "Publicar",

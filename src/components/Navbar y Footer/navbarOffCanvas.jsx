@@ -34,6 +34,7 @@ function OffcanvasExample() {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
+              className={`fondoOffcanvas${expand}`}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -43,9 +44,9 @@ function OffcanvasExample() {
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
                   <NavLink to="/" className='NavLink'>Inicio</NavLink>
-                  {/* <Nav.Link href="#action2">Eventos</Nav.Link> */}
                   <NavLink to="mascotas" className='NavLink'>Mascotas</NavLink>
                   <NavLink to="ayuda" className='NavLink'>Ayuda</NavLink>
+                   {/* iniciarsesion */}
                    <Login/> 
                  
                   <NavLink to="registro" className='NavLink'>Registrarse</NavLink>
@@ -54,7 +55,7 @@ function OffcanvasExample() {
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item className='NavLink' > 
-                       <NavLink to="perfil" className='NavLink'>Mi perfil </NavLink>
+                       <NavLink to="perfil" className='NavLink miPerfilNav'>Mi perfil </NavLink>
 
                     </NavDropdown.Item>
 

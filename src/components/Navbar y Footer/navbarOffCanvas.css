@@ -1,6 +1,10 @@
+.bs-offcanvas-bg{
+    background-color: transparent;
+}
+
 .mi-navbar-personalizado {
     background-image: linear-gradient(to right, #206491, #284177); 
-    color: white; /* Asegúrate de que el texto sea visible */
+    color: rgb(44, 30, 30); /* Asegúrate de que el texto sea visible */
 }
 .nav-link{
     font-weight: bold;
@@ -14,9 +18,14 @@
 .navbar-toggler{
     margin-right: 10px;
 }
+.NavLink .miPerfilNav {
+    font-size: larger;
+    color: #284177;
+}
 
-.offcanvas-end{
- background-image: linear-gradient(to right, #206491, #284177); 
+.offcanvas{
+    background-image: linear-gradient(to right, #206491, #284177); 
+    color: rgb(15, 8, 8);
 }
 #offcanvasNavbarLabel-expand-lg{
     color: white;
@@ -30,3 +39,7 @@
 .NavLink:hover{
     color: rgb(77, 187, 150);
 }
+.navbar-nav{
+    align-items: flex-start
+}
+

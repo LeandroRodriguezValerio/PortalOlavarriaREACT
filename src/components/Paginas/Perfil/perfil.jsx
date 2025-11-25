@@ -2,18 +2,38 @@ import perroperdido from '../../../assets/IMG/perroperdido.jpg';
 import './perfil.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Formulario from '../../Paginas/Mascotas/formulario.jsx';
+import Swal from 'sweetalert2';
 
 
 function Perfil() {
 
     
+//   const handleLogout = () => {
+//     // Remove the token from storage to log the user out
+//     localStorage.removeItem('token');
+//     navigate('/');
+//   };
+
   const handleLogout = () => {
-    // Remove the token from storage to log the user out
-    localStorage.removeItem('token');
-    navigate('/login');
-  };
+  Swal.fire({
+    title: "Cerrar sesión",
+    text: "¿Seguro que deseas cerrar sesión?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí, salir",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      navigate("/");
+    }
+  });
+};
 
-
+const usuario = JSON.parse(localStorage.getItem("user"));
+console.log(usuario.usuario_id);
 
 
     return (
@@ -28,7 +48,7 @@ function Perfil() {
                         <p className="perfil-ubicacion">Olavarría, Buenos Aires</p>
                         <button>Editar perfil</button>
                 </div>
-
+                    <Formulario/>
                 <div className="perfil-publicaciones">
                     <h3>Mis publicaciones</h3>
                     <div id="lista-publicaciones">
@@ -47,7 +67,7 @@ function Perfil() {
                             <button className="btn-eliminar" >Eliminar</button>
                         </div>
 
-                        <button onClick={handleLogout}>Log Out</button>
+                        <button onClick={handleLogout}>Cerrar Sesion</button>
                         {/* <!-- JS insertará las publicaciones acá --> */}
 
                         {/* Aca hay que poner las card del usuario */}
