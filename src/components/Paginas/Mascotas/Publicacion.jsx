@@ -24,27 +24,29 @@ export default function Publicacion() {
                         .openPopup();
                 },
                 function (error) {
-                    alert("No se pudo obtener tu ubicación: " + error.message);
+                    console.log("No se pudo obtener tu ubicación: " + error.message);
                 }
             );
         } else {
             alert("Tu navegador no soporta geolocalización.");
         }
-        // Agregar un marcador (opcional)
-        L.marker([-36.8937, -60.3161]).addTo(map)
-            .bindPopup('Ubicación de Olavarría')
-            .openPopup();
+        // // Agregar un marcador (opcional)
+        // L.marker([-36.8937, -60.3161]).addTo(map)
+        //     .bindPopup('Ubicación de Olavarría')
+        //     .openPopup();
 
         // Cargar marcadores de la base de datos
-        const listadoMascotas = fetch('http://localhost:3000/mascotas')
+        const   listadoMascotas = fetch('http://localhost:3000/posts')
             .then(response => response.json())
             .then(data => {
                 data.forEach(mascota => {
-                    L.marker([mascota.lat, mascota.lng], { icon: miIcono }).addTo(map)
+                     console.log(mascota);
+                    L.marker([mascota.lat, mascota.lng]).addTo(map)
                         .bindPopup(`<b>${mascota.nombre}</b><br>${mascota.descripcion}`);
                 });
             })
             .catch(error => console.error('Error al cargar las mascotas:', error));
+           
 
         // Limpiar el mapa al desmontar el componente
         return () => {

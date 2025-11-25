@@ -21,3 +21,12 @@
 #offcanvasNavbarLabel-expand-lg{
     color: white;
 }
+.NavLink{
+    padding: 0.5rem;
+       font-weight: bold;
+    font-size: larger;
+    color: rgb(247, 249, 254);
+}
+.NavLink:hover{
+    color: rgb(77, 187, 150);
+}

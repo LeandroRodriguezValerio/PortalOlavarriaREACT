@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Card from "./card";
 import "./cards.css";
-import Formulario from "./publicacion/formulario";
 const BASE_URL = "http://localhost:3000/posts";
 
 export default function CardsContainer() {

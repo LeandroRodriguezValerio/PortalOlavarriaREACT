@@ -1,8 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Portal_Olavarria_1 from '../../assets/IMG/Portal_Olavarria_1.png';
-import Portal_Olavarria_2 from '../../assets/IMG/Portal_Olavarria_2.png';
-import Portal_Olavarria_3 from '../../assets/IMG/Portal_Olavarria_3.png';
-import Portal_Olavarria_4 from '../../assets/IMG/Portal_Olavarria_4.png';
+import Portal_Olavarria_1 from '../../../assets/IMG/Portal_Olavarria_1.png';
+import Portal_Olavarria_2 from '../../../assets/IMG/Portal_Olavarria_2.png';
+import Portal_Olavarria_3 from '../../../assets/IMG/Portal_Olavarria_3.png';
+import Portal_Olavarria_4 from '../../../assets/IMG/Portal_Olavarria_4.png';
 
 function CarouselInicio() {
   return (

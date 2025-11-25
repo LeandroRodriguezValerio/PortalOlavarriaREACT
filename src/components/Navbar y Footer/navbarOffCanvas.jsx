@@ -5,8 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Login from '../Paginas/Login/login';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './navbarOffCanvas.css'
+import './NavbarOffCanvas.css'
 function OffcanvasExample() {
   return (
     <>
@@ -39,17 +42,22 @@ function OffcanvasExample() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Inicio</Nav.Link>
+                  <NavLink to="/" className='NavLink'>Inicio</NavLink>
                   {/* <Nav.Link href="#action2">Eventos</Nav.Link> */}
-                  <Nav.Link href="#action3">Mascotas</Nav.Link>
-                  <Nav.Link href="#action4">Ayuda</Nav.Link>
-                  <Nav.Link href="#action5">Iniciar sesión</Nav.Link>
-                  <Nav.Link href="#action6">Registrarse</Nav.Link>
+                  <NavLink to="mascotas" className='NavLink'>Mascotas</NavLink>
+                  <NavLink to="ayuda" className='NavLink'>Ayuda</NavLink>
+                   <Login/> 
+                 
+                  <NavLink to="registro" className='NavLink'>Registrarse</NavLink>
                   <NavDropdown
                     title="Menu"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action7">Mi perfil</NavDropdown.Item>
+                    <NavDropdown.Item className='NavLink' > 
+                       <NavLink to="perfil" className='NavLink'>Mi perfil </NavLink>
+
+                    </NavDropdown.Item>
+
                     <NavDropdown.Item href="#action8">
                       Configuración
                     </NavDropdown.Item>
