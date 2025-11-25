@@ -4,7 +4,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Formulario from '../../Paginas/Mascotas/formulario.jsx';
 import Swal from 'sweetalert2';
-
+import CardsContainerPerfil from '../Perfil/cardContainerPerfil.jsx';
+const BASE_URL = "http://localhost:3000/users";
 
 function Perfil() {
 
@@ -33,7 +34,110 @@ function Perfil() {
 };
 
 const usuario = JSON.parse(localStorage.getItem("user"));
-console.log(usuario.usuario_id);
+console.log(usuario);
+
+// Función para editar el usuario
+const editUser = async (usuario) => {
+  const { value: formValues } = await Swal.fire({
+    title: "Editar perfil ✏️",
+    html: `
+      <input id="nombre" class="swal2-input" placeholder="Nombre" value="${usuario.nombre || ""}">
+      <input id="apellido" class="swal2-input" placeholder="Apellido" value="${usuario.apellido || ""}">
+      <input id="email" class="swal2-input" placeholder="Email" value="${usuario.email || ""}">
+    `,
+    showCancelButton: true,
+    confirmButtonText: "Guardar cambios",
+    cancelButtonText: "Cancelar",
+    preConfirm: () => {
+      return {
+        nombre: document.getElementById("nombre").value.trim(),
+        apellido: document.getElementById("apellido").value.trim(),
+        email: document.getElementById("email").value.trim(),
+      };
+    },
+  });
+
+  if (!formValues) return;
+console.log(formValues);
+  try {
+    const res = await fetch(`${BASE_URL}/${usuario.usuario_id}`, {
+      method: "Patch",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ updateUserDto: formValues }),
+    });
+
+    const data = await res.json();
+
+    // actualizar localStorage
+    localStorage.setItem("user", JSON.stringify(data));
+
+    Swal.fire({
+      icon: "success",
+      title: "Perfil actualizado",
+      text: "Los datos fueron guardados correctamente 💾",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+    window.location.reload(); // refrescar pantalla del perfil
+
+  } catch (err) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "No se pudo actualizar el usuario 😞",
+    });
+  }
+};
+
+// función para eliminar el usuario
+const deleteUser = async (usuario_id) => {
+  const confirm = await Swal.fire({
+    title: "¿Eliminar cuenta?",
+    text: "Esta acción es permanente. Se eliminarán tus publicaciones también.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Sí, eliminar cuenta",
+    cancelButtonText: "Cancelar",
+  });
+
+  if (!confirm.isConfirmed) return;
+
+  try {
+    await fetch(`http://localhost:3000/users/${usuario_id}`, {
+      method: "DELETE",
+    });
+
+    // borrar sesión
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    Swal.fire({
+      icon: "success",
+      title: "Cuenta eliminada",
+      text: "Tu cuenta fue eliminada correctamente 🗑️",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 2000);
+
+  } catch (err) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "No se pudo eliminar la cuenta 😞",
+    });
+  }
+};
+
+
+
+
 
 
     return (
@@ -43,31 +147,31 @@ console.log(usuario.usuario_id);
             <div className="perfil-contenedor">
                 <div className="perfil-info">
                     <img src={perroperdido} alt="Foto de perfil" className="perfil-foto"/>
-                        <h2 className="perfil-nombre">Juan Pérez</h2>
-                        <p className="perfil-email">juanperez@email.com</p>
-                        <p className="perfil-ubicacion">Olavarría, Buenos Aires</p>
-                        <button>Editar perfil</button>
+                        {/* Nombre completo */}
+                            <h2 className="perfil-nombre">
+                            {usuario ? `${usuario.nombre} ${usuario.apellido}` : "Invitado"}
+                            </h2>
+
+                            {/* Email */}
+                            <p className="perfil-email">
+                            {usuario ? usuario.email : "Sin email"}
+                            </p>
+
+                        
+                       
+                        <button onClick={() => editUser(usuario)}>Editar perfil ✏️</button>
+                        <button onClick={() => deleteUser(usuario.usuario_id)}>Eliminar cuenta 🗑️</button>
+                        <Formulario/>
+                          <button onClick={handleLogout}>Cerrar Sesion</button>
                 </div>
-                    <Formulario/>
+                    
                 <div className="perfil-publicaciones">
+                    
                     <h3>Mis publicaciones</h3>
                     <div id="lista-publicaciones">
-                        <div id="publicacion1">
-                            <h4>Perro perdido</h4>
-                            <p>Descripción: Mi perro se perdió cerca del parque. Es un labrador marrón.</p>
-                            <p>Fecha: 2025-01-15</p>
-                            <button className="btn-editar" >Editar</button>
-                            <button className="btn-eliminar" >Eliminar</button>
-                        </div>
-                        <div id="publicacion2">
-                            <h4>Gato encontrado</h4>
-                            <p>Descripción: Encontré un gato gris en la calle. Tiene collar rojo y es muy amigable.</p>
-                            <p>Fecha: 2025-01-20</p>
-                            <button className="btn-editar">Editar</button>
-                            <button className="btn-eliminar" >Eliminar</button>
-                        </div>
+                        <CardsContainerPerfil />
 
-                        <button onClick={handleLogout}>Cerrar Sesion</button>
+                      
                         {/* <!-- JS insertará las publicaciones acá --> */}
 
                         {/* Aca hay que poner las card del usuario */}
