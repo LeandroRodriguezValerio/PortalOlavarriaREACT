@@ -3,15 +3,15 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import "./Registro.css";
 
-const API_URL = "http://localhost:3000/users"; // tu endpoint backend
+const API_URL = "http://localhost:3000/auth/register"; // tu endpoint backend
 
 export default function Registro({onPublicar}) {
   const initialForm = {
     nombre: "",
     apellido: "",
     email: "",
-    contrasenia: "",
-    repeatcontrasenia: "",
+    password: "",
+    repeatPassword: "",
   };
 
   const [form, setForm] = useState(initialForm);
@@ -25,9 +25,9 @@ export default function Registro({onPublicar}) {
   const validarFormulario = async (e) => {
     e.preventDefault();
 
-    if (form.contrasenia !== form.repeatcontrasenia) {
+    if (form.password !== form.repeatPassword) {
       alert("Las contraseñas no coinciden.");
-      setForm({ ...form, contrasenia: "", repeatcontrasenia: "" });
+      setForm({ ...form, password: "", repeatPassword: "" });
       return;
     }
 
@@ -119,21 +119,21 @@ export default function Registro({onPublicar}) {
         <label>Contraseña</label>
         <input
           type="password"
-          name="contrasenia"
+          name="password"
           placeholder="Escriba su contraseña"
           required
           minLength="6"
-          value={form.contrasenia}
+          value={form.password}
           onChange={handleChange}
         />
 
         <label>Repetir contraseña</label>
         <input
           type="password"
-          name="repeatcontrasenia"
+          name="repeatPassword"
           placeholder="Repita su contraseña"
           required
-          value={form.repeatcontrasenia}
+          value={form.repeatPassword}
           onChange={handleChange}
         />
 

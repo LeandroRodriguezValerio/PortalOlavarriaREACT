@@ -1,8 +1,25 @@
 import perroperdido from '../../../assets/IMG/perroperdido.jpg';
 import './perfil.css';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
 function Perfil() {
+
+    
+  const handleLogout = () => {
+    // Remove the token from storage to log the user out
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
+
+
+
+
     return (
-        <section id="perfil-usuario">
+
+
+        <section id="perfil-usuario" className='perfil-container'>
             <div className="perfil-contenedor">
                 <div className="perfil-info">
                     <img src={perroperdido} alt="Foto de perfil" className="perfil-foto"/>
@@ -29,6 +46,8 @@ function Perfil() {
                             <button className="btn-editar">Editar</button>
                             <button className="btn-eliminar" >Eliminar</button>
                         </div>
+
+                        <button onClick={handleLogout}>Log Out</button>
                         {/* <!-- JS insertará las publicaciones acá --> */}
 
                         {/* Aca hay que poner las card del usuario */}

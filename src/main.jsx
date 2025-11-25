@@ -14,6 +14,16 @@ import Login from './components/Paginas/Login/login.jsx';
 import Registro from './components/Paginas/Registro/Registro.jsx';
 import Perfil from './components/Paginas/Perfil/perfil.jsx';
 
+
+function PrivateRoute({ children }) {
+  const token = localStorage.getItem('token');
+  // If token exists, render child components, otherwise redirect to login
+  return token ? children : <Navigate to="/login" replace />;
+}
+
+
+
+
 const Router = createBrowserRouter([
   { 
     path: "/",
@@ -41,7 +51,8 @@ const Router = createBrowserRouter([
       },
        {
         path: "perfil",
-        element: <Perfil />
+        element: <PrivateRoute> <Perfil /> </PrivateRoute> 
+        
       }
     ]
    },
