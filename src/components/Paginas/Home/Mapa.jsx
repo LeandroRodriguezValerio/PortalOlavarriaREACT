@@ -51,26 +51,26 @@ export default function Mapa() {
       url:
         'https://mapas.olavarria.gov.ar/geoserver/ows?service=wfs&version=1.0.0&request=GetFeature&typeName=ide:farmacias&maxFeatures=10000&outputFormat=application/json',
       popupFn: (f) =>
-        `${f.properties.nombre || ''}<br>${f.properties.direccion || ''}<br>${f.properties.telefono || ''}`,
+        `Nombre: ${f.properties.nombre || ''}<br>Dirección ${f.properties.direccion || ''}<br>Teléfono: ${f.properties.telefono || ''}`,
     },
     {
       name: 'Bibliotecas',
       url:
         'https://mapas.olavarria.gov.ar/geoserver/ows?service=wfs&version=1.0.0&request=GetFeature&typeName=ide:bibliotecas&maxFeatures=10000&outputFormat=application/json',
       popupFn: (f) =>
-        `${f.properties.nombre || ''}<br>${f.properties.calle_barr || ''} ${f.properties.numero_cas || ''}<br>${f.properties.telefono || ''}`,
+        `Nombre: ${f.properties.nombre || ''}<br>Dirección: ${f.properties.direccion || ''}<br>Teléfono: ${f.properties.telefono || ''}`,
     },
     {
       name: 'Centros de Salud',
       url:
         'https://mapas.olavarria.gov.ar/geoserver/ows?service=wfs&version=1.0.0&request=GetFeature&typeName=ide:centros_de_salud&maxFeatures=10000&outputFormat=application/json',
       popupFn: (f) =>
-        `${f.properties.centro || ''}<br>${f.properties.direccion || ''}<br>${f.properties.telefono || ''}`,
+        `Nombre: ${f.properties.centro || ''}<br>Dirección: ${f.properties.direccion || ''}<br>Teléfono: ${f.properties.telefono || ''}`,
     },
     {
       name: "Centro atención primaria (CAPS)",
       url: "https://mapas.olavarria.gov.ar/geoserver/ows?service=wfs&version=1.0.0&request=GetFeature&typeName=ide:atencion_primaria&maxFeatures=10000&outputFormat=application/json",
-      popupFn: f => `${f.properties.nombre || ''}<br>${f.properties.direccion || ''}<br>${f.properties.telefono || ''}`
+      popupFn: f => `Nombre: ${f.properties.nombre || ''}<br>Dirección: ${f.properties.direccion || ''}<br>Teléfono: ${f.properties.telefono || ''}`
 
     },
     {

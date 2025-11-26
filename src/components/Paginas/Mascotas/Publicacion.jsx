@@ -42,7 +42,10 @@ export default function Publicacion() {
                 data.forEach(mascota => {
                      console.log(mascota);
                     L.marker([mascota.lat, mascota.lng]).addTo(map)
-                        .bindPopup(`<b>${mascota.nombre}</b><br>${mascota.descripcion}`);
+                        .bindPopup(`<b>Nombre: ${mascota.nombre}</b>
+                                    <br>Contacto: ${mascota.contacto}</br>
+                                    <br>Descripcion: ${mascota.descripcion}</br>
+                                    <br>Dirección: ${mascota.direccion}</br>`); //<img src="${mascota.imagen_url}" alt="Imagen de ${mascota.nombre}" width="100"/>
                 });
             })
             .catch(error => console.error('Error al cargar las mascotas:', error));
