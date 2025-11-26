@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate, useLocation } from 'react-router-dom';
 import Ayuda from './components/Paginas/Ayuda/Ayuda.jsx';
 import Mascotas from './components/Paginas/Mascotas/Mascotas.jsx';
 import Home from './components/Paginas/Home/Home.jsx';
@@ -17,8 +17,9 @@ import Perfil from './components/Paginas/Perfil/perfil.jsx';
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem('token');
-  // If token exists, render child components, otherwise redirect to login
-  return token ? children : <Navigate to="/login" replace />;
+  const location = useLocation();
+  // If token exists, render child components, otherwise redirect to registro
+  return token ? children : <Navigate to="/registro" replace state={{from: location}} />;
 }
 
 

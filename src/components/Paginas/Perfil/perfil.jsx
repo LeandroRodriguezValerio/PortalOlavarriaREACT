@@ -58,18 +58,41 @@ const editUser = async (usuario) => {
   });
 
   if (!formValues) return;
-console.log(formValues);
+
   try {
+    const token = localStorage.getItem("token");
     const res = await fetch(`${BASE_URL}/${usuario.usuario_id}`, {
-      method: "Patch",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ updateUserDto: formValues }),
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      // Enviar el DTO directamente (no envuelto)
+      body: JSON.stringify(formValues),
     });
 
-    const data = await res.json();
+    if (!res.ok) {
+      const txt = await res.text().catch(() => null);
+      throw new Error(txt || `Error ${res.status}`);
+    }
 
-    // actualizar localStorage
-    localStorage.setItem("user", JSON.stringify(data));
+    // Si el backend devuelve el usuario actualizado, úsalo; si no, hacer fetch adicional
+    let data = null;
+    const text = await res.text();
+    try { data = text ? JSON.parse(text) : null; } catch { data = null; }
+
+    if (data) {
+      localStorage.setItem("user", JSON.stringify(data));
+    } else {
+      // fallback: pedir usuario actualizado al backend si PUT no lo retorna
+      const meRes = await fetch(`${BASE_URL}/${usuario.usuario_id}`, {
+        headers: { ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+      });
+      if (meRes.ok) {
+        const fresh = await meRes.json();
+        localStorage.setItem("user", JSON.stringify(fresh));
+      }
+    }
 
     Swal.fire({
       icon: "success",
@@ -79,9 +102,9 @@ console.log(formValues);
       showConfirmButton: false,
     });
 
-    window.location.reload(); // refrescar pantalla del perfil
-
+    window.location.reload();
   } catch (err) {
+    console.error("Edit user error:", err);
     Swal.fire({
       icon: "error",
       title: "Error",
@@ -90,7 +113,6 @@ console.log(formValues);
   }
 };
 
-// función para eliminar el usuario
 const deleteUser = async (usuario_id) => {
   const confirm = await Swal.fire({
     title: "¿Eliminar cuenta?",
@@ -106,11 +128,16 @@ const deleteUser = async (usuario_id) => {
   if (!confirm.isConfirmed) return;
 
   try {
-    await fetch(`http://localhost:3000/users/${usuario_id}`, {
+    const token = localStorage.getItem("token");
+    const res = await fetch(`http://localhost:3000/users/${usuario_id}`, {
       method: "DELETE",
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
     });
 
-    // borrar sesión
+    if (!res.ok) throw new Error(`Delete failed ${res.status}`);
+
     localStorage.removeItem("token");
     localStorage.removeItem("user");
 
@@ -125,8 +152,8 @@ const deleteUser = async (usuario_id) => {
     setTimeout(() => {
       window.location.href = "/";
     }, 2000);
-
   } catch (err) {
+    console.error("Delete user error:", err);
     Swal.fire({
       icon: "error",
       title: "Error",
