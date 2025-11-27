@@ -45,8 +45,7 @@ function OffcanvasExample() {
                 <Nav className="justify-content-start flex-grow-1 pe-3">
                   <NavLink to="/" className='NavLink'>Inicio</NavLink>
                   <NavLink to="mascotas" className='NavLink'>Mascotas</NavLink>
-                  <NavLink to="ayuda" className='NavLink'>Ayuda</NavLink>
-                   {/* iniciarsesion */}
+                  {/* iniciarsesion */}
                    <Login/> 
                  
                   <NavLink to="registro" className='NavLink'>Registrarse</NavLink>
