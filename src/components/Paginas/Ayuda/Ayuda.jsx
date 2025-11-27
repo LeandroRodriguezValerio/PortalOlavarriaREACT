@@ -1,4 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion';
+import "./Ayuda.css";
 
 function Ayuda() {
   return (

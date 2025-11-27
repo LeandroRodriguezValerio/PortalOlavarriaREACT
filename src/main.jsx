@@ -13,7 +13,7 @@ import Compartido from './components/Paginas/Compartido/Compartido.jsx';
 import Login from './components/Paginas/Login/login.jsx';
 import Registro from './components/Paginas/Registro/Registro.jsx';
 import Perfil from './components/Paginas/Perfil/perfil.jsx';
-
+import Error from './components/Paginas/Error404/Error.jsx';
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -54,6 +54,10 @@ const Router = createBrowserRouter([
         path: "perfil",
         element: <PrivateRoute> <Perfil /> </PrivateRoute> 
         
+      },
+      {
+        path: "*",
+        element: <Error />
       }
     ]
    },
