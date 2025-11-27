@@ -50,6 +50,9 @@ function OffcanvasExample() {
                    <Login/> 
                  
                   <NavLink to="registro" className='NavLink'>Registrarse</NavLink>
+                  <NavLink to="ayuda" className='NavLink'>Ayuda</NavLink>
+                  <NavLink to="perfil" className='NavLink miPerfilNav'>Mi perfil </NavLink>
+{/*                   
                   <NavDropdown
                     title="Menu"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -66,7 +69,7 @@ function OffcanvasExample() {
                     <NavDropdown.Item href="#action9">
                       Cerrar sesión
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown> */}
                   
                 </Nav>
               </Offcanvas.Body>

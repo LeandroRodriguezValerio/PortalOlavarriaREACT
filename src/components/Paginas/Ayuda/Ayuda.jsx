@@ -3,19 +3,20 @@ import "./Ayuda.css";
 
 function Ayuda() {
   return (
+    <div className="ayuda-container">
      <h2>Preguntas Frecuentes</h2>,
     <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>¿Qué es Portal Olavarría?</Accordion.Header>
         <Accordion.Body>
-          Es una plataforma comunitaria donde podés publicar mascotas perdidas, enterarte de eventos locales y
+          Es una plataforma comunitaria donde podés publicar mascotas perdidas, encontradas o en adopción, y
                     acceder a información útil de Olavarría.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
         <Accordion.Header>¿Cómo puedo reportar una mascota perdida?</Accordion.Header>
         <Accordion.Body>
-         Desde la sección “Mascotas Perdidas”, completá el formulario con los datos del animal, foto, zona
+         Desde la sección “Mi Perfil”, completá el formulario con los datos de la mascota, foto, dirección
                     donde se perdió y un contacto. La publicación se mostrará en el mapa.
         </Accordion.Body>
       </Accordion.Item>
@@ -35,6 +36,7 @@ function Ayuda() {
       </Accordion.Item>
 
     </Accordion>
+    </div>
   );
 }
 
