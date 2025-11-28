@@ -8,6 +8,7 @@ import CardsContainerPerfil from '../Perfil/cardContainerPerfil.jsx';
 const BASE_URL = "http://localhost:3000/users";
 
 function Perfil() {
+  const navigate = useNavigate();
 
     
 //   const handleLogout = () => {
@@ -28,7 +29,7 @@ function Perfil() {
     if (result.isConfirmed) {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      navigate("/");
+      navigate('/', { replace: true });
     }
   });
 };
@@ -150,7 +151,7 @@ const deleteUser = async (usuario_id) => {
     });
 
     setTimeout(() => {
-      window.location.href = "/";
+      navigate('/', { replace: true });
     }, 2000);
   } catch (err) {
     console.error("Delete user error:", err);
