@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "leaflet": "^1.9.4",
     "node": "^24.8.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.1",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.9.6",
+    "sweetalert2": "^11.26.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

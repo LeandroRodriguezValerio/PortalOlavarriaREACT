@@ -1,0 +1,11 @@
+
+#descripcion{
+    height: 50px;
+     width: 264px;
+}
+.swal2-html-container {
+    
+    display: flex;
+    flex-direction: column;
+ 
+}

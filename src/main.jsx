@@ -1,13 +1,70 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css'
-import App from './App.jsx'
-import { Navbar } from './components/navbar.jsx'
+
+import { createBrowserRouter, RouterProvider, Navigate, useLocation } from 'react-router-dom';
+import Ayuda from './components/Paginas/Ayuda/Ayuda.jsx';
+import Mascotas from './components/Paginas/Mascotas/Mascotas.jsx';
+import Home from './components/Paginas/Home/Home.jsx';
+import Compartido from './components/Paginas/Compartido/Compartido.jsx';
+import Login from './components/Paginas/Login/login.jsx';
+import Registro from './components/Paginas/Registro/Registro.jsx';
+import Perfil from './components/Paginas/Perfil/perfil.jsx';
+import Error from './components/Paginas/Error404/Error.jsx';
+
+function PrivateRoute({ children }) {
+  const token = localStorage.getItem('token');
+  const location = useLocation();
+  // If token exists, render child components, otherwise redirect to registro
+  return token ? children : <Navigate to="/registro" replace state={{from: location}} />;
+}
+
+
+
+
+const Router = createBrowserRouter([
+  { 
+    path: "/",
+    element: <Compartido />,
+    children: [
+      { 
+        index: true, 
+        element: <Home /> 
+      },
+      {
+        path:'mascotas',
+        element: <Mascotas />
+      },
+      {
+        path: "ayuda",
+        element: <Ayuda />
+      },
+      {
+        path: "login",
+        element: <Login /> 
+      },
+      {
+        path: "registro",
+        element: <Registro />
+      },
+       {
+        path: "perfil",
+        element: <PrivateRoute> <Perfil /> </PrivateRoute> 
+        
+      },
+      {
+        path: "*",
+        element: <Error />
+      }
+    ]
+   },
+  ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
-    <App />
-    
+    <RouterProvider router={Router} />  
   </StrictMode>,
 )
