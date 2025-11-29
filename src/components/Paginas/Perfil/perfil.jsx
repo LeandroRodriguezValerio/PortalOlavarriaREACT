@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Formulario from '../../Paginas/Mascotas/formulario.jsx';
 import Swal from 'sweetalert2';
-import CardsContainerPerfil from '../Perfil/cardContainerPerfil.jsx';
+import CardsContainerPerfil from './cardContainerPerfil.jsx';
 const BASE_URL = "http://localhost:3000/users";
 
 function Perfil() {

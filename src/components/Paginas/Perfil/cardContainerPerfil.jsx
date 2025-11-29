@@ -80,7 +80,7 @@ export default function CardsContainerPerfil() {
 
   // ✅ PUT - editar publicación
   const editPost = async (post_id, post) => {
-  //  console.log(post_id);
+    console.log(post_id);
     const { value: formValues } = await Swal.fire({
       title: "Editar publicación ✏️",
       html: `
