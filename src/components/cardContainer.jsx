@@ -28,7 +28,7 @@ export default function CardsContainer() {
     };
     fetchData();
   }, []);
-  console.log(posts);
+ // console.log(posts);
 
   // ✅ PUT - editar publicación
   // const editPost = async (id, post) => {
@@ -79,7 +79,7 @@ export default function CardsContainer() {
 
   // ✅ PUT - editar publicación
   const editPost = async (post_id, post) => {
-    console.log(post_id);
+  //  console.log(post_id);
     const { value: formValues } = await Swal.fire({
       title: "Editar publicación ✏️",
       html: `

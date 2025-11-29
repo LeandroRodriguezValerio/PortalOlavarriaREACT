@@ -4,7 +4,7 @@ import "./Ayuda.css";
 function Ayuda() {
   return (
     <div className="ayuda-container">
-     <h2>Preguntas Frecuentes</h2>,
+     <h2>Preguntas Frecuentes</h2>
     <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>¿Qué es Portal Olavarría?</Accordion.Header>

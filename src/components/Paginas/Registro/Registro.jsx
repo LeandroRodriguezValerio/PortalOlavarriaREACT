@@ -37,7 +37,6 @@ export default function Registro({onPublicar}) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      console.log(form);
       if (!res.ok) {
         const text = await res.text();
         throw new Error(text || "Error al guardar en la base de datos");

@@ -152,7 +152,7 @@ console.log(usuario.usuario_id);
       });
     }
 
-    console.log(formValues);
+  //  console.log(formValues);
   };
 
   return (
