@@ -9,6 +9,26 @@ export default function CardsContainer() {
   const [loading, setLoading] = useState(true);
   const user = JSON.parse(localStorage.getItem("user"));
 
+  // Escuchar evento global que notifica nuevas publicaciones
+  useEffect(() => {
+    const handler = async (e) => {
+      // Al recibir el evento, volver a traer todas las publicaciones desde el backend
+      try {
+        setLoading(true);
+        const res = await fetch(BASE_URL);
+        const data = await res.json();
+        setPosts(Array.isArray(data) ? data : []);
+      } catch (err) {
+        console.error('Error al refetchar publicaciones:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    window.addEventListener('post-created', handler);
+    return () => window.removeEventListener('post-created', handler);
+  }, []);
+
   // ✅ GET - traer publicaciones de la base de datos
   useEffect(() => {
     const fetchData = async () => {
