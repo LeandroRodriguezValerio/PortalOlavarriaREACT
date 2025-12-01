@@ -18,16 +18,11 @@ Frontend: React + Vite app en `PortalOlavarriaReact/` (UI, mapas, formularios).
   npm install react@rc react-dom@rc leaflet
   npm install react-leaflet@next
 
-
-- Configurar URLs del backend
-  - El frontend espera la API en `http://localhost:3000` por defecto. Si cambias el puerto o dominio ajusta las solicitudes en el código o usa variables (puedes crear `.env` en la carpeta React con por ejemplo `VITE_API_URL=http://localhost:3000` y usar `import.meta.env.VITE_API_URL`).
-
 - Ejecutar frontend en modo desarrollo:
   npm run dev
   - Vite normalmente expone la app en http://localhost:5173
 
-
-3) Mapas y assets
+2) Mapas y assets
 - Los iconos y recursos del mapa se esperan en `PortalOlavarriaReact/public/IMG/` o `PortalOlavarria/public/IMG/` según implementación. Confirma rutas (`/IMG/marcadoranimal.png`).
 - Si el mapa no se ve, verifica que el contenedor tenga altura en CSS (`.map-container`) y que el frontend invoque `map.invalidateSize()` al montarse.
 
