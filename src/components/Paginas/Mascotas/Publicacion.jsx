@@ -41,11 +41,16 @@ export default function Publicacion() {
             .then(data => {
                 data.forEach(mascota => {
             //         console.log(mascota);
-                    L.marker([mascota.lat, mascota.lng]).addTo(map)
-                        .bindPopup(`<b>Nombre: ${mascota.nombre}</b>
-                                    <br>Contacto: ${mascota.contacto}</br>
-                                    <br>Descripcion: ${mascota.descripcion}</br>
-                                    <br>Dirección: ${mascota.direccion}</br>`); //<img src="${mascota.imagen_url}" alt="Imagen de ${mascota.nombre}" width="100"/>
+                                const popupHtml = `
+                                        <div style="max-width:220px">
+                                            ${mascota.imagen_url ? `<img src="${mascota.imagen_url}" alt="${mascota.nombre}" style="width:100%; border-radius:6px; margin-bottom:6px;"/>` : ''}
+                                            <b>Nombre: ${mascota.nombre}</b>
+                                            <br>Contacto: ${mascota.contacto}</br>
+                                            <br>Descripcion: ${mascota.descripcion}</br>
+                                            <br>Dirección: ${mascota.direccion}</br>
+                                        </div>
+                                `;
+                                L.marker([mascota.lat, mascota.lng]).addTo(map).bindPopup(popupHtml);
                 });
             })
             .catch(error => console.error('Error al cargar las mascotas:', error));

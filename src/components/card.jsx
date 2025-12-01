@@ -3,11 +3,11 @@ import "./cards.css";
 import imgDefault from "../assets/IMG/perroperdido.jpg";
 
 export default function Card({ element = {}, index, onDelete, onEdit, user }) {
-  const { nombre, contacto, direccion, descripcion } = element || {};
+  const { nombre, contacto, direccion, descripcion, imagen_url } = element || {};
 
   return (
     <div className="card" id={`contCard${index}`}>
-      <img src={imgDefault} alt={nombre || "Mascota"} className="card-img" />
+      <img src={imagen_url || imgDefault} alt={nombre || "Mascota"} className="card-img" />
 
       <div className="card-body">
         <h3 className="card-title">{nombre || "Sin nombre"}</h3>
