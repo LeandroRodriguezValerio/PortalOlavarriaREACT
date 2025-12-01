@@ -1,12 +1,37 @@
-# React + Vite
+* Portal Olavarría
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portal Olavarría es una plataforma web informativa para la ciudad de Olavarría, que centraliza distintos servicios comunitarios como eventos, mascotas perdidas, estado del transporte, clima y emergencias.
+- Demo o documentación
 
-Currently, two official plugins are available:
+* Documentación del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://docs.google.com/document/d/1tj4o17XZZaah8u4GTJvDGJlt1NlJWQikS4Y-dEEccEE/edit?tab=t.33hq4mcjdl3l
 
-## Expanding the ESLint configuration
+Frontend: React + Vite app en `PortalOlavarriaReact/` (UI, mapas, formularios).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1) Preparar frontend (React + Vite)
+  clonar repositorio
+  npm install
+  npm install react-router-dom 
+  npm install sweetalert2
+  npm install react-router-dom
+  npm install react@rc react-dom@rc leaflet
+  npm install react-leaflet@next
+
+
+- Configurar URLs del backend
+  - El frontend espera la API en `http://localhost:3000` por defecto. Si cambias el puerto o dominio ajusta las solicitudes en el código o usa variables (puedes crear `.env` en la carpeta React con por ejemplo `VITE_API_URL=http://localhost:3000` y usar `import.meta.env.VITE_API_URL`).
+
+- Ejecutar frontend en modo desarrollo:
+  npm run dev
+  - Vite normalmente expone la app en http://localhost:5173
+
+
+3) Mapas y assets
+- Los iconos y recursos del mapa se esperan en `PortalOlavarriaReact/public/IMG/` o `PortalOlavarria/public/IMG/` según implementación. Confirma rutas (`/IMG/marcadoranimal.png`).
+- Si el mapa no se ve, verifica que el contenedor tenga altura en CSS (`.map-container`) y que el frontend invoque `map.invalidateSize()` al montarse.
+
+
+
+
+
